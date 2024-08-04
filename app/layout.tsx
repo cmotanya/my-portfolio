@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Merriweather } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const poppins = Merriweather({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
 });

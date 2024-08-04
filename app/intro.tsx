@@ -47,14 +47,14 @@ const Intro = () => {
   };
 
   return (
-    <div id="intro" className="pt-32">
+    <div id="intro" className="pt-28">
       <div className="bg-300 absolute inset-0 z-[-50] w-full"></div>
       <motion.div
         initial="hidden"
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="space-y-8"
+        className="space-y-4"
       >
         <h3>Hi, I&apos;m Cornelius</h3>
 
