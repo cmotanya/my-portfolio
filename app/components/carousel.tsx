@@ -70,7 +70,7 @@ const IntroCarousel = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="h-full w-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-6 text-white"
+          className="h-full w-full p-6 text-white"
         >
           <div className="flex h-full flex-col justify-between">
             <div>
