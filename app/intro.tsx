@@ -45,7 +45,7 @@ const Intro = () => {
     <div id="intro" className="">
       <div className="grid items-center gap-6 md:grid-cols-2">
         <div>
-          <Image src="/launching.gif" alt="image" width={500} height={500} />
+          <Image src="/launching.png" alt="image" width={500} height={500} />
         </div>
 
         <motion.div
