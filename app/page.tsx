@@ -1,9 +1,15 @@
-import Image from 'next/image'
+import Footer from "./footer";
+import Header from "./header";
+import Intro from "./intro";
 
 export default function Home() {
-    return (
-        <main className="min-h-screen">
-            <div>New Page</div>
-        </main>
-    )
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen">
+        <Intro />
+      </main>
+      <Footer />
+    </>
+  );
 }

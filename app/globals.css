@@ -2,32 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Colors */
+    --custom-50: #f9fafb;
+    --custom-100: #f3f4f6;
+    --custom-200: #e5e7eb;
+    --custom-300: #d1d5db;
+    --custom-400: #9ca3af;
+    --custom-450: #9ca3af/0.5;
+    --custom-500: #6b7280;
+    --custom-550: #6b7280/0.5;
+    --custom-600: #4b5563;
+    --custom-650: #4b5563/0.5;
+    --custom-700: #374151;
+    --custom-750: #374151/0.5;
+    --custom-800: #1f2937;
+    --custom-850: #1f2937/0.5;
+    --custom-900: #111827;
+    --custom-950: #030712;
+
+    --primary: #4633cd;
+    --secondary: #e493b6;
+    --accent: #db786d;
+
+    --width: min(90ch, calc(100% - 2rem));
+  }
+
+  * {
+    @apply m-0 box-border select-none scroll-smooth p-0 focus-visible:outline-none;
+  }
+
+  body {
+    @apply bg-200 relative text-base text-black;
+  }
+  /* body.no-scroll {
+    @apply overflow-hidden;
+  } */
+
+  main {
+    @apply mx-auto w-[var(--width)];
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  p {
+    @apply leading-[2rem];
+  }
+  h1 {
+    @apply text-4xl font-extrabold;
+  }
+  button,
+  a {
+    @apply focus-visible:scale-105 focus-visible:transform focus-visible:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:transition-all focus-visible:duration-500;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @layer components {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover {
+      border: 2px solid #475569;
+      font-size: 1.125rem;
+      -webkit-text-fill-color: #cbd5e1;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+      caret-color: #0f172a;
+    }
+
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      border: 2px solid #475569;
+      font-size: 1.125rem;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      -webkit-text-fill-color: #cbd5e1;
+      transition: background-color 5000s ease-in-out 0s;
+      caret-color: #0f172a;
+    }
   }
 }
