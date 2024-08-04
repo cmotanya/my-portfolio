@@ -51,17 +51,19 @@ const IntroCarousel = () => {
       { threshold: 0.1 },
     );
 
-    if (carouselRef.current) observer.observe(carouselRef.current);
+    const currentRef = carouselRef.current;
+
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (carouselRef.current) observer.unobserve(carouselRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, []);
 
   return (
     <div
       ref={carouselRef}
-      className="relative h-[24rem] w-full scale-0 transform overflow-hidden rounded-sm shadow-lg transition duration-300 md:mt-10"
+      className="relative h-[24rem] w-full scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10"
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -72,7 +74,7 @@ const IntroCarousel = () => {
           transition={{ duration: 0.5 }}
           className="h-full w-full p-6 text-white"
         >
-          <div className="flex h-full flex-col justify-between">
+          <div className="flex h-full flex-col">
             <div>
               <h4
                 className={cn(
@@ -90,12 +92,15 @@ const IntroCarousel = () => {
             <div className="w-fit rounded-full bg-white p-3 text-indigo-600">
               {IntroSection[currentIndex].icon}
             </div>
+            <button className="mt-8 w-fit rounded-full bg-white p-3 font-semibold uppercase text-indigo-600">
+              View Project
+            </button>
           </div>
         </motion.div>
       </AnimatePresence>
 
       {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 z-[10] flex -translate-x-1/2 items-center space-x-2">
+      <div className="absolute bottom-3 left-1/2 z-[10] flex -translate-x-1/2 items-center space-x-2">
         {num.map((n) => (
           <button
             key={n}
