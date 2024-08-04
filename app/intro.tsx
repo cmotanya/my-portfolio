@@ -47,7 +47,7 @@ const Intro = () => {
   };
 
   return (
-    <div id="intro" className="pt-28">
+    <div id="intro" className="pt-20 md:pt-28">
       <div className="bg-300 absolute inset-0 z-[-50] w-full"></div>
       <motion.div
         initial="hidden"
