@@ -38,7 +38,7 @@ export const SlideTextButton = ({ text, icon }: ButtonProps) => {
       variants={buttonVariants}
       onMouseEnter={() => setIsMouseEntered(true)}
       onMouseLeave={() => setIsMouseEntered(false)}
-      className="ring-500 hover:bg-950 group flex w-full items-center justify-center gap-8 rounded-full py-3 font-semibold uppercase tracking-wide ring-4 transition-all hover:ring-0 md:w-[16rem]"
+      className="ring-500 hover:bg-950 group flex w-full items-center justify-center gap-8 rounded-full py-3 text-lg font-semibold uppercase tracking-wide ring-4 transition-all hover:ring-0 md:w-[16rem]"
     >
       <Link
         href="#"

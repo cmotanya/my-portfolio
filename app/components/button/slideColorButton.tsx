@@ -25,7 +25,7 @@ export const SlideColorButton = ({ text, icon }: ButtonProps) => {
       initial="hidden"
       animate="visible"
       variants={buttonVariants}
-      className="!text-background !bg-primary group relative mx-auto w-full overflow-hidden rounded-full py-8 font-semibold uppercase tracking-wide md:w-[16rem] md:py-3"
+      className="!text-background !bg-primary group relative mx-auto w-full overflow-hidden rounded-full py-8 text-lg uppercase tracking-wide md:w-[16rem] md:py-3"
     >
       <Link href="/contact" className="flex w-full items-center">
         <span className="text-100 absolute left-10 z-20 group-active:text-black md:left-8 md:group-hover:text-black">
