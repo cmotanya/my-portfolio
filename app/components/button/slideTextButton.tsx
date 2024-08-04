@@ -38,7 +38,7 @@ export const SlideTextButton = ({ text, icon }: ButtonProps) => {
       variants={buttonVariants}
       onMouseEnter={() => setIsMouseEntered(true)}
       onMouseLeave={() => setIsMouseEntered(false)}
-      className="border-500 hover:bg-950 border-2 group flex w-full items-center justify-center gap-8 rounded-full py-2 text-lg font-semibold uppercase tracking-wide transition-all hover:ring-0 md:w-[12rem]"
+      className="border-500 hover:bg-primary group flex w-full items-center justify-center gap-8 rounded-full border-2 py-2 text-lg font-semibold uppercase tracking-wide transition-all hover:ring-0 md:w-[12rem]"
     >
       <Link
         href="#"
@@ -49,20 +49,20 @@ export const SlideTextButton = ({ text, icon }: ButtonProps) => {
             <span key={index} className="relative inline-block overflow-hidden">
               <span
                 style={getTransformStyle(isMouseEntered, index)}
-                className="group-hover:text-100 relative whitespace-pre"
+                className="relative whitespace-pre group-hover:text-black"
               >
                 {char}
               </span>
               <span
                 style={getTransformStyle(isMouseEntered, index)}
-                className="group-hover:text-100 absolute left-0 top-full inline-block"
+                className="absolute left-0 top-full inline-block group-hover:text-black"
               >
                 {char}
               </span>
             </span>
           ))}{" "}
         </span>
-        <span className="bg-primary-foreground group-hover:text-100 text-foreground flex h-8 w-8 items-center justify-center rounded-full">
+        <span className="bg-400 group-hover:text-100 flex h-8 w-8 items-center justify-center rounded-full">
           {icon}
         </span>
       </Link>
