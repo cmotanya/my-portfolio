@@ -25,13 +25,13 @@ export const SlideColorButton = ({ text, icon }: ButtonProps) => {
       initial="hidden"
       animate="visible"
       variants={buttonVariants}
-      className="!text-background !bg-primary group relative mx-auto w-full overflow-hidden rounded-full py-2 text-lg uppercase tracking-wide md:w-[12rem] md:py-3"
+      className="!text-background !bg-primary group relative mx-auto w-full overflow-hidden rounded-full py-7 text-lg uppercase tracking-wide md:w-[12rem] md:py-3"
     >
       <Link href="/contact" className="flex w-full items-center">
-        <span className="text-100 absolute left-3 z-20 group-active:text-black md:left-4 md:group-hover:text-black">
+        <span className="text-100 absolute left-8 z-20 group-active:text-black md:left-4 md:group-hover:text-black">
           {text}
         </span>
-        <div className="bg-50 group-hover:bg-200 absolute inset-y-0 right-1 top-1/2 flex h-[calc(100%-0.5rem)] w-16 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full pl-1 transition-all duration-200 ease-in-out group-active:w-[calc(100%-0.45rem)] md:w-11 md:group-hover:w-[calc(100%-0.45rem)]">
+        <div className="bg-50 group-hover:bg-200 absolute inset-y-0 right-1 top-1/2 flex h-[calc(100%-0.5rem)] w-12 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full pl-1 transition-all duration-200 ease-in-out group-active:w-[calc(100%-0.45rem)] md:w-11 md:group-hover:w-[calc(100%-0.45rem)]">
           <span className="absolute right-[0.6rem] text-lg">{icon}</span>
         </div>
       </Link>

@@ -47,7 +47,7 @@ const Intro = () => {
   };
 
   return (
-    <div id="intro" className="pt-20 md:pt-28">
+    <div id="intro" className="pt-[4rem] md:pt-28">
       <div className="bg-300 absolute inset-0 z-[-50] w-full"></div>
       <motion.div
         initial="hidden"
@@ -83,7 +83,7 @@ const Intro = () => {
 
       <motion.div
         variants={containerVariants}
-        className="mx-auto mt-12 flex w-full flex-col justify-between gap-6 md:w-fit md:flex-row md:gap-[5rem]"
+        className="mx-auto mt-12 flex w-[80%] flex-col justify-between gap-6 md:w-fit md:flex-row md:gap-[5rem]"
       >
         <SlideTextButton text="My Work" icon={<IconTemplate />} />
         <SlideColorButton text="Contact" icon={<IconArrowRight />} />
