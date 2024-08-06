@@ -63,7 +63,7 @@ const IntroCarousel = () => {
   return (
     <div
       ref={carouselRef}
-      className="relative h-[24rem] w-full scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10"
+      className="relative h-[24rem] w-full scale-0 transform overflow-hidden rounded-sm shadow-md duration-300 md:mt-10"
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -72,7 +72,7 @@ const IntroCarousel = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="h-full w-full p-6 text-white"
+          className="h-full w-full p-6"
         >
           <div className="flex h-full flex-col">
             <div>
@@ -92,7 +92,8 @@ const IntroCarousel = () => {
             <div className="w-fit rounded-full bg-white p-3 text-indigo-600">
               {IntroSection[currentIndex].icon}
             </div>
-            <button className="mt-8 w-fit rounded-full bg-white p-3 font-semibold uppercase text-indigo-600">
+            <button className="mt-8 w-fit rounded-full bg-primary px-4 py-3 uppercase text-white">
+              {" "}
               View Project
             </button>
           </div>

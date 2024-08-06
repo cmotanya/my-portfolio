@@ -22,7 +22,7 @@
     --custom-900: #111827;
     --custom-950: #030712;
 
-    --primary: #c53f3f;
+    --primary: #6b23eb;
     --secondary: #e493b6;
     --accent: #db786d;
 
@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply relative bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-base text-black;
+    @apply relative bg-900 text-base text-white;
   }
   /* body.no-scroll {
     @apply overflow-hidden;

@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "duration-400 z-[1000] flex h-[5.5rem] w-full items-center justify-between border-black bg-inherit uppercase px-5 transition-colors",
+        "duration-400 z-[1000] flex h-[5.5rem] w-full items-center justify-between border-black bg-800 px-5 uppercase transition-colors",
       )}
     >
       <Link href="/">Cornelius</Link>
