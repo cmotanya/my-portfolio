@@ -43,7 +43,7 @@ const Intro = () => {
       animate="visible"
       whileInView={"visible"}
       variants={containerVariants}
-      className="min-h-screen items-center justify-center space-y-6 pt-[1rem] md:pt-[3rem]"
+      className="min-h-screen items-center justify-center space-y-6 pt-[1rem] md:pt-[4rem]"
     >
       <motion.div className="max-w-4xl space-y-6 text-center">
         <motion.p
@@ -55,16 +55,14 @@ const Intro = () => {
         <motion.p className="text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
           web developer <br></br> code poet <br></br> freelancer
         </motion.p>
-        <motion.p variants={itemVariants} className="text-2xl">
+        <motion.p variants={itemVariants} className="text-balance text-2xl">
           Passionate about creating exceptional experiences on the web.
         </motion.p>
       </motion.div>
 
-      <div></div>
-
       <motion.div
         variants={itemVariants}
-        className="flex flex-col justify-center gap-8 md:flex-row"
+        className="flex flex-col justify-center gap-8 pt-8 md:flex-row"
       >
         <button className="rounded-md px-4 py-2 ring-2 ring-primary">
           {" "}
