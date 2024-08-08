@@ -45,7 +45,7 @@ const Intro = () => {
       variants={containerVariants}
       className="min-h-screen items-center justify-center space-y-6 pt-[1rem] md:pt-[4rem]"
     >
-      <motion.div className="max-w-4xl space-y-4 text-center md:space-y-6">
+      <motion.div className="max-w-4xl space-y-6 text-center">
         <motion.p
           variants={itemVariants}
           className="text-xl uppercase tracking-widest"
