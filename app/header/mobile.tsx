@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import nav from "./navigation";
 import HamburgerMenu from "./hamburger";
 import { cn } from "../utils/cn";
-import { IconDeviceMobile, IconMail, IconMapCheck } from "@tabler/icons-react";
+import { IconDeviceMobile, IconMail, IconMap, IconMapCheck } from "@tabler/icons-react";
 
 const MobileHeader = () => {
   const [activeLink, setActiveLink] = useState(nav[0].href);
@@ -68,9 +68,9 @@ const MobileHeader = () => {
               exit="closed"
               variants={navVariants}
               aria-label="Mobile Navigation"
-              className="bg-background fixed inset-y-0 right-0 z-[1001] flex w-full max-w-sm flex-col overflow-hidden shadow-lg"
+              className="bg-background fixed inset-y-0 right-0 z-[1001] flex w-full max-w-sm flex-col overflow-hidden"
             >
-              <div className="flex h-full flex-col justify-between overflow-y-auto pt-20">
+              <div className="flex h-full flex-col justify-between overflow-y-auto pt-[6rem]">
                 <motion.ul
                   className="w-full space-y-4 px-6"
                   variants={{
@@ -103,7 +103,7 @@ const MobileHeader = () => {
                   className="rounded-t-lg bg-gray-100 p-6"
                 >
                   <h3 className="mb-4 text-lg font-semibold">Contact Me</h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 lowercase">
                     <li className="flex items-center">
                       <IconMail className="mr-3 text-primary" />
                       <a
@@ -116,11 +116,11 @@ const MobileHeader = () => {
                     <li className="flex items-center">
                       <IconDeviceMobile className="mr-3 text-primary" />
                       <a href="tel:+1234567890" className="hover:underline">
-                        +1 (254) 712-909-475
+                        (+254) 712-909-475
                       </a>
                     </li>
                     <li className="flex items-center">
-                      <IconMapCheck className="mr-3 text-primary" />
+                      <IconMap className="mr-3 text-primary" />
                       <span>Mombasa, Kenya</span>
                     </li>
                   </ul>
