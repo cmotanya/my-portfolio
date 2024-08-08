@@ -45,7 +45,7 @@ const Intro = () => {
       variants={containerVariants}
       className="min-h-screen items-center justify-center space-y-6 pt-[1rem] md:pt-[4rem]"
     >
-      <motion.div className="max-w-4xl space-y-6 text-center">
+      <motion.div className="max-w-4xl space-y-4 text-center md:space-y-6">
         <motion.p
           variants={itemVariants}
           className="text-xl uppercase tracking-widest"
@@ -62,7 +62,7 @@ const Intro = () => {
 
       <motion.div
         variants={itemVariants}
-        className="flex flex-col justify-center gap-8 pt-8 md:flex-row"
+        className="flex flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-6"
       >
         <button className="rounded-md px-4 py-2 ring-2 ring-primary">
           {" "}
