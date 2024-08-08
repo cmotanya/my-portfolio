@@ -75,7 +75,7 @@ const MobileHeader = () => {
             variants={navVariants}
             aria-label="Mobile Navigation"
             className={cn(
-              "bg-200 fixed inset-y-0 right-0 z-[1000] flex w-full flex-col overflow-hidden text-xl",
+              "fixed inset-y-0 right-0 z-[1000] flex w-full flex-col overflow-hidden bg-200 text-xl",
               isOpen ? "right-0" : "-right-full",
             )}
           >

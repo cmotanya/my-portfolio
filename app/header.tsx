@@ -30,10 +30,12 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "duration-400 z-[1000] flex h-[5.5rem] w-full items-center justify-between border-black bg-800 px-5 uppercase transition-colors",
+        "duration-400 flex h-[5.5rem] w-full items-center justify-between border-gray-400 px-5 uppercase transition-colors md:border-b-2",
       )}
     >
-      <Link href="/">Cornelius</Link>
+      <Link href="/" className="font-semibold">
+        Cornelius
+      </Link>
 
       <DesktopHeader />
 

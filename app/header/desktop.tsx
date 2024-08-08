@@ -15,15 +15,12 @@ const DesktopHeader = () => {
   }, [pathname]);
 
   return (
-    <nav className="bg-700 hidden overflow-hidden rounded-full text-lg md:flex">
+    <nav className="hidden overflow-hidden text-lg md:flex">
       <ul className="group grid grid-flow-col items-center gap-4 p-1">
         {nav.map((item) => {
           const isActive = activeItem === item.name;
           return (
-            <li
-              key={item.href}
-              className="bg-850 grid rounded-full text-50"
-            >
+            <li key={item.href} className="grid rounded-full bg-850">
               <Link
                 href={item.href}
                 className={cn(

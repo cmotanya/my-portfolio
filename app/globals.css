@@ -22,7 +22,7 @@
     --custom-900: #111827;
     --custom-950: #030712;
 
-    --primary: #6b23eb;
+    --primary: #c14085;
     --secondary: #e493b6;
     --accent: #db786d;
 
@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply relative bg-900 text-base text-white;
+    @apply relative bg-200 text-base text-black;
   }
   /* body.no-scroll {
     @apply overflow-hidden;
