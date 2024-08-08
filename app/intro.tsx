@@ -43,7 +43,7 @@ const Intro = () => {
       animate="visible"
       whileInView={"visible"}
       variants={containerVariants}
-      className="min-h-screen items-center justify-center space-y-6 md:pt-[3rem]"
+      className="min-h-screen items-center justify-center space-y-6 pt-[1rem] md:pt-[3rem]"
     >
       <motion.div className="max-w-4xl space-y-6 text-center">
         <motion.p
@@ -52,7 +52,7 @@ const Intro = () => {
         >
           hello, i&apos;m cornelius motanya
         </motion.p>
-        <motion.p className="text-6xl font-bold uppercase leading-tight tracking-wide">
+        <motion.p className="text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
           web developer <br></br> code poet <br></br> freelancer
         </motion.p>
         <motion.p variants={itemVariants} className="text-2xl">
