@@ -11,7 +11,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
-import { skillItems } from "./lib/aboutSection";
+import { skillItems } from "./lib/skills";
 
 const About = () => {
   const skillsRef = useRef<HTMLDivElement | null>(null);
@@ -90,7 +90,7 @@ const About = () => {
       >
         <motion.div variants={textVariants} className="space-y-4">
           <h1>About Me</h1>
-          <p className="text-justify text-lg">
+          <p className="text-balance text-lg">
             Having a background in IT and love of learning new technologies, I
             realized that I can help people with their needs by writing code. My
             determination to learn and improve my skills initially started in
@@ -98,7 +98,7 @@ const About = () => {
             JavaScript and TypeScript where I found my passion for front-end
             development.
           </p>
-          <p className="text-justify text-lg">
+          <p className="text-balance text-lg">
             Alongside being a front-end developer, I am also a freelance
             technician specializing in cctv, networking and security. Any leads
             you may have in any of these areas are welcome.
@@ -122,10 +122,11 @@ const About = () => {
             <motion.ul
               variants={skillVariants}
               key={index}
-              className="mt-4 p-2 md:max-w-2xl"
+              className="p-2 md:max-w-2xl"
             >
-              <li className="flex items-center gap-2 rounded-lg bg-accent px-4 py-2 shadow-md">
-                {skill.name} {skill.icon}
+              <li className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent">
+                <span className="text-xl text-black">{skill.name}</span>{" "}
+                <span>{skill.icon}</span>
               </li>
             </motion.ul>
           ))}
