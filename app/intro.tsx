@@ -37,7 +37,7 @@ const Intro = () => {
   };
 
   return (
-    <section id="intro" className="min-h-screen pt-[1rem] md:pt-[4rem]">
+    <section id="intro" className="h-dvh pt-[1rem] md:pt-[4rem]">
       <motion.div
         initial="hidden"
         animate="visible"
