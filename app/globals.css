@@ -85,4 +85,10 @@
       caret-color: #0f172a;
     }
   }
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+  [data-attribute="true"] {
+    flex-wrap: wrap;
+  }
 }

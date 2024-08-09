@@ -35,13 +35,13 @@ const config: Config = {
       } as ColorType,
 
       animation: {
-        scroll: "scroll 20s linear infinite",
+        scroll: "scroll 5s linear infinite",
       },
 
       keyframes: {
         scroll: {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },

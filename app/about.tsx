@@ -11,6 +11,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { skillItems } from "./lib/aboutSection";
 
 const About = () => {
   const skillsRef = useRef<HTMLDivElement | null>(null);
@@ -51,14 +52,29 @@ const About = () => {
     },
   };
 
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        staggerChildren: 0.8,
+        delayChildren: i * 0.5,
+      },
+    }),
+  };
+
   useEffect(() => {
     const scrollContainer = skillsRef.current;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
-    if (scrollContainer) {
-      const scrollContent = Array.from(scrollContainer.children);
-      scrollContent.forEach((element) => {
-        const duplicatedItem = element.cloneNode(true);
-        scrollContainer.appendChild(duplicatedItem);
+    if (scrollContainer && !prefersReducedMotion) {
+      const itemContainer = Array.from(scrollContainer.children);
+
+      itemContainer.forEach((item) => {
+        item.setAttribute("data-attribute", "true");
       });
     }
   }, []);
@@ -91,42 +107,28 @@ const About = () => {
 
         <motion.button
           variants={buttonVariants}
-          className="rounded-md bg-primary px-4 py-2 text-white"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-full rounded-md bg-primary px-4 py-2 text-white md:w-fit"
         >
           Hire Me
         </motion.button>
       </motion.div>
 
       <motion.div>
-        <h2 className="pt-12 text-3xl font-semibold">Skills</h2>
-        <div className="flex flex-col items-center justify-center overflow-hidden">
-          <div
-            ref={skillsRef}
-            className="animate-scroll mx-auto mt-4 flex w-full items-center justify-center gap-8 p-2 md:max-w-2xl"
-          >
-            <li className="flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 shadow-md">
-              JavaScript <IconBrandJavascript />
-            </li>
-            <li className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 shadow-md">
-              React <IconBrandReact />
-            </li>{" "}
-            <li className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 shadow-md">
-              TypeScript <IconBrandTypescript />
-            </li>
-            <li className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 shadow-md">
-              Next.js <IconBrandNextjs />
-            </li>
-            <li className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 shadow-md">
-              Tailwind <IconBrandTailwind />
-            </li>
-            <li className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 shadow-md">
-              {" "}
-              Python <IconBrandPython />
-            </li>
-            <li className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 shadow-md">
-              CSS <IconBrandCss3 />
-            </li>
-          </div>
+        <h2 className="text-3xl font-semibold md:pt-12">Skills</h2>
+        <div ref={skillsRef} className="flex flex-wrap">
+          {skillItems.map((skill, index) => (
+            <motion.ul
+              variants={skillVariants}
+              key={index}
+              className="mt-4 p-2 md:max-w-2xl"
+            >
+              <li className="flex items-center gap-2 rounded-lg bg-accent px-4 py-2 shadow-md">
+                {skill.name} {skill.icon}
+              </li>
+            </motion.ul>
+          ))}
         </div>
       </motion.div>
     </section>

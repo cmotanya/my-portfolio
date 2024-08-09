@@ -62,15 +62,15 @@ const Intro = () => {
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-6"
+          className="flex w-full flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-6"
         >
-          <button className="rounded-md px-4 py-2 ring-2 ring-primary">
+          <button className="w-full rounded-md px-4 py-2 ring-2 ring-primary md:w-fit">
             {" "}
             <a href="#href" className="text-xl uppercase">
               get in touch
             </a>
           </button>
-          <button className="rounded-md bg-primary px-4 py-2 text-lg uppercase text-white">
+          <button className="w-full rounded-md bg-primary px-4 py-2 text-lg uppercase text-white md:w-fit">
             <a href="/resume.pdf" download="resume.pdf">
               download resume
             </a>
