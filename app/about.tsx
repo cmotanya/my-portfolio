@@ -9,9 +9,10 @@ import {
   IconBrandTailwind,
   IconBrandTypescript,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { skillItems } from "./lib/skills";
+import { type } from "os";
 
 const About = () => {
   const skillsRef = useRef<HTMLDivElement | null>(null);
@@ -53,31 +54,18 @@ const About = () => {
   };
 
   const skillVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: (i = 1) => ({
+    hidden: { opacity: 0, x: "-100%" },
+    visible: {
       opacity: 1,
-      scale: 1,
+      x: 0,
       transition: {
-        staggerChildren: 0.8,
-        delayChildren: i * 0.5,
+        type: "spring",
+        dampness: 12,
+        duration: 0.5,
+        ease: [0.43, 0.13, 0.23, 0.96],
       },
-    }),
+    },
   };
-
-  useEffect(() => {
-    const scrollContainer = skillsRef.current;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (scrollContainer && !prefersReducedMotion) {
-      const itemContainer = Array.from(scrollContainer.children);
-
-      itemContainer.forEach((item) => {
-        item.setAttribute("data-attribute", "true");
-      });
-    }
-  }, []);
 
   return (
     <section id="about-me" className="min-dvh pt-4 md:pt-0">
@@ -115,23 +103,34 @@ const About = () => {
         </motion.button>
       </motion.div>
 
-      <motion.div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         <h2 className="pt-8 text-3xl font-semibold md:pt-12">Skills</h2>
-        <div ref={skillsRef} className="flex flex-wrap">
+        <motion.div
+          ref={skillsRef}
+          variants={skillVariants}
+          className="flex flex-wrap"
+        >
           {skillItems.map((skill, index) => (
-            <motion.ul
-              variants={skillVariants}
-              key={index}
-              className="p-2 md:max-w-2xl"
-            >
-              <li className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent">
+            <motion.ul key={index} className="p-2 md:max-w-2xl">
+              <motion.li
+                variants={skillVariants}
+                className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent"
+              >
                 <span className="text-xl text-black">{skill.name}</span>{" "}
                 <span>{skill.icon}</span>
-              </li>
+              </motion.li>
             </motion.ul>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
+
+      {/* EDUCATION */}
+      <h2 className="pt-8 text-3xl font-semibold">Education</h2>
+      {/* EXPERIENCES */}
     </section>
   );
 };

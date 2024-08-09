@@ -7,6 +7,7 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { Socials } from "./lib/socials";
 
 const Intro = () => {
   const containerVariants = {
@@ -82,38 +83,16 @@ const Intro = () => {
           variants={itemVariants}
           className="absolute left-10 top-1/4 hidden -translate-y-1/2 *:p-1 md:block"
         >
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl"
-          >
-            <IconBrandFacebook color="#1877F2" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl"
-          >
-            <IconBrandLinkedin color="#0a66c2" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl"
-          >
-            <IconMail color="#dc4e41" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl"
-          >
-            <IconBrandGithub color="#181717" />
-          </a>
+          {Socials.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.icon}
+            </a>
+          ))}
         </motion.div>
       </motion.div>
     </section>
