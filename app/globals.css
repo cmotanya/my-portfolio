@@ -23,14 +23,14 @@
     --custom-950: #030712;
 
     --primary: #c14085;
-    --secondary: #e493b6;
-    --accent: #db786d;
+    --secondary: #d6db8f;
+    --accent: #a3d378;
 
-    --width: min(100ch, calc(100% - 2rem));
+    --width: min(80ch, calc(100% - 2rem));
   }
 
   * {
-    @apply m-0 box-border select-none scroll-smooth p-0 focus-visible:outline-none;
+    @apply m-0 box-border select-none !scroll-smooth p-0 focus-visible:outline-none;
   }
 
   body {

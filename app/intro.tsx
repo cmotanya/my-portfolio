@@ -37,85 +37,86 @@ const Intro = () => {
   };
 
   return (
-    <motion.div
-      id="intro"
-      initial="hidden"
-      animate="visible"
-      whileInView={"visible"}
-      variants={containerVariants}
-      className="min-h-screen items-center justify-center space-y-6 pt-[1rem] md:pt-[4rem]"
-    >
-      <motion.div className="max-w-4xl space-y-6 text-center">
-        <motion.p
+    <section id="intro" className="min-h-screen pt-[1rem] md:pt-[4rem]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        whileInView={"visible"}
+        variants={containerVariants}
+        className="flex flex-col items-center justify-center space-y-6"
+      >
+        <motion.div className="max-w-4xl space-y-6 text-center">
+          <motion.p
+            variants={itemVariants}
+            className="text-xl uppercase tracking-widest"
+          >
+            hello, i&apos;m cornelius motanya
+          </motion.p>
+          <motion.p className="text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
+            web developer <br></br> code poet <br></br> freelancer
+          </motion.p>
+          <motion.p variants={itemVariants} className="text-balance text-2xl">
+            Passionate about creating exceptional experiences on the web.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
           variants={itemVariants}
-          className="text-xl uppercase tracking-widest"
+          className="flex flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-6"
         >
-          hello, i&apos;m cornelius motanya
-        </motion.p>
-        <motion.p className="text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
-          web developer <br></br> code poet <br></br> freelancer
-        </motion.p>
-        <motion.p variants={itemVariants} className="text-balance text-2xl">
-          Passionate about creating exceptional experiences on the web.
-        </motion.p>
-      </motion.div>
+          <button className="rounded-md px-4 py-2 ring-2 ring-primary">
+            {" "}
+            <a href="#href" className="text-xl uppercase">
+              get in touch
+            </a>
+          </button>
+          <button className="rounded-md bg-primary px-4 py-2 text-lg uppercase text-white">
+            <a href="/resume.pdf" download="resume.pdf">
+              download resume
+            </a>
+          </button>
+        </motion.div>
 
-      <motion.div
-        variants={itemVariants}
-        className="flex flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-6"
-      >
-        <button className="rounded-md px-4 py-2 ring-2 ring-primary">
-          {" "}
-          <a href="#href" className="text-xl uppercase">
-            get in touch
+        {/* social icons. Hidden on small screens */}
+        <motion.div
+          variants={itemVariants}
+          className="absolute left-10 top-1/4 hidden -translate-y-1/2 *:p-1 md:block"
+        >
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-3xl"
+          >
+            <IconBrandFacebook color="#1877F2" />
           </a>
-        </button>
-        <button className="rounded-md bg-primary px-4 py-2 text-lg uppercase text-white">
-          <a href="/resume.pdf" download="resume.pdf">
-            download resume
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-3xl"
+          >
+            <IconBrandLinkedin color="#0a66c2" />
           </a>
-        </button>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-3xl"
+          >
+            <IconMail color="#dc4e41" />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-3xl"
+          >
+            <IconBrandGithub color="#181717" />
+          </a>
+        </motion.div>
       </motion.div>
-
-      {/* social icons. Hidden on small screens */}
-      <motion.div
-        variants={itemVariants}
-        className="absolute left-10 top-1/4 hidden -translate-y-1/2 *:p-1 md:block"
-      >
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-3xl"
-        >
-          <IconBrandFacebook color="#1877F2" />
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-3xl"
-        >
-          <IconBrandLinkedin color="#0a66c2" />
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-3xl"
-        >
-          <IconMail color="#dc4e41" />
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-3xl"
-        >
-          <IconBrandGithub color="#181717" />
-        </a>
-      </motion.div>
-    </motion.div>
+    </section>
   );
 };
 
