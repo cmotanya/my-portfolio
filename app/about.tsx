@@ -80,7 +80,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about-me" className="min-h-screen py-4">
+    <section id="about-me" className="min-h-screen">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -116,7 +116,7 @@ const About = () => {
       </motion.div>
 
       <motion.div>
-        <h2 className="text-3xl font-semibold md:pt-12">Skills</h2>
+        <h2 className="pt-4 text-3xl font-semibold md:pt-12">Skills</h2>
         <div ref={skillsRef} className="flex flex-wrap">
           {skillItems.map((skill, index) => (
             <motion.ul
