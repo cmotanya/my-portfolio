@@ -1,5 +1,6 @@
 import { educationItems } from "@/app/lib/educationItems";
 import React from "react";
+import DownloadResume from "./downloadResume";
 
 const Education = () => {
   return (
@@ -21,7 +22,7 @@ const Education = () => {
 
             <div className="px-6 py-2">
               <p className="font-semibold leading-[1.2rem]">{item.degree}</p>
-              <div className="mt-3 uppercase font-medium">
+              <div className="mt-3 font-medium uppercase">
                 <p className="text-sm">{item.institution}</p>
                 <p className="text-sm">{item.location}</p>
               </div>
@@ -29,6 +30,8 @@ const Education = () => {
           </div>
         ))}
       </div>
+
+      <DownloadResume />
     </div>
   );
 };

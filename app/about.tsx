@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Education from "./components/about/education";
 import Skills from "./components/about/skills";
+import { Toaster } from "sonner";
 
 const About = () => {
   const containerVariants = {
@@ -43,7 +44,7 @@ const About = () => {
   };
 
   return (
-    <section id="about-me" className="h-dvh md:pt-0">
+    <section id="about-me" className="md:pt-0">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -85,6 +86,8 @@ const About = () => {
       <Education />
 
       {/* EXPERIENCES */}
+
+      <Toaster position="top-center" richColors duration={3000} />
     </section>
   );
 };
