@@ -41,7 +41,9 @@ const DownloadResume = () => {
       aria-label="Download Resume"
       className="mt-8"
     >
-      <button
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={handleDownload}
         disabled={isDownloading}
         className="flex w-full transform items-center justify-center gap-2 rounded-md bg-accent px-4 py-3 shadow transition-all active:scale-105 md:w-fit"
@@ -59,7 +61,7 @@ const DownloadResume = () => {
             <motion.span variants={textVariant}>Download CV</motion.span>
           </>
         )}
-      </button>
+      </motion.button>
     </motion.div>
   );
 };
