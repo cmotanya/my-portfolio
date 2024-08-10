@@ -87,7 +87,6 @@ const About = () => {
       <Education />
 
       {/* EXPERIENCES */}
-      <JobExperience />
 
       <Toaster position="top-center" richColors duration={3000} />
     </section>
