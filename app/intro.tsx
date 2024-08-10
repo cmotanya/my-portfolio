@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  IconBrandFacebook,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconMail,
-} from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { Socials } from "./lib/socials";
 
@@ -68,6 +62,7 @@ const Intro = () => {
           <button className="w-full rounded-md px-4 py-2 ring-2 ring-primary md:w-fit">
             {" "}
             <a href="#href" className="text-xl uppercase">
+              {" "}
               get in touch
             </a>
           </button>

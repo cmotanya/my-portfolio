@@ -119,7 +119,7 @@ const Carousel = () => {
       </AnimatePresence>
 
       {/* Dots */}
-      <div className="absolute bottom-2 left-1/2 z-[10] mt-12 flex -translate-x-1/2 items-center space-x-2">
+      <div className="absolute bottom-2 left-1/2 z-[20] mt-12 flex -translate-x-1/2 items-center space-x-2">
         {num.map((n) => (
           <button
             key={n}
