@@ -1,10 +1,15 @@
 import { IconCloudDownload } from "@tabler/icons-react";
+import { delay, motion } from "framer-motion";
 import { useCallback, useRef, useState } from "react";
 import { toast } from "sonner";
 
 const DownloadResume = () => {
   const [isDownloading, setIsDownloading] = useState(false);
-  const buttonRef = useRef(null);
+
+  const textVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, delay: 0.5 } },
+  };
 
   const handleDownload = useCallback(() => {
     setIsDownloading(true);
@@ -30,31 +35,38 @@ const DownloadResume = () => {
   }, []);
 
   return (
-    <div aria-label="Download Resume">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      aria-label="Download Resume"
+      className="mt-8"
+    >
       <button
         onClick={handleDownload}
         disabled={isDownloading}
-        className="flex w-full transform items-center justify-center gap-2 rounded-md px-4 py-3 text-black shadow-xl ring-2 ring-primary transition-all active:scale-105 md:w-fit"
+        className="flex w-full transform items-center justify-center gap-2 rounded-md bg-accent px-4 py-3 shadow transition-all active:scale-105 md:w-fit"
       >
         {isDownloading ? (
           <>
             <Spinner />
-            Downloading...
+            <motion.span variants={textVariant}>Downloading...</motion.span>
           </>
         ) : (
           <>
-            <IconCloudDownload aria-hidden="true" />
-            Download CV
+            <motion.span variants={textVariant}>
+              <IconCloudDownload aria-hidden="true" />
+            </motion.span>
+            <motion.span variants={textVariant}>Download CV</motion.span>
           </>
         )}
       </button>
-    </div>
+    </motion.div>
   );
 };
 
 const Spinner = () => (
   <svg
-    className="h-5 w-5 animate-spin text-white"
+    className="h-5 w-5 animate-spin text-black"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

@@ -1,6 +1,7 @@
 import { educationItems } from "@/app/lib/educationItems";
 import React from "react";
 import DownloadResume from "./downloadResume";
+import { motion } from "framer-motion";
 
 const Education = () => {
   return (
@@ -9,8 +10,11 @@ const Education = () => {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {educationItems.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
             className="w-fit rounded-md bg-gradient-to-l from-secondary from-50% shadow-2xl"
           >
             <div className="flex items-center justify-between gap-2 p-4">
@@ -27,7 +31,7 @@ const Education = () => {
                 <p className="text-sm">{item.location}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
