@@ -43,7 +43,7 @@ const About = () => {
   };
 
   return (
-    <section id="about-me" className="min-dvh pt-4 md:pt-0">
+    <section id="about-me" className="h-dvh md:pt-0">
       <motion.div
         initial="hidden"
         animate="visible"
