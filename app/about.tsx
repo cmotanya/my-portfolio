@@ -1,22 +1,11 @@
 "use client";
 
-import {
-  IconBrandCss3,
-  IconBrandJavascript,
-  IconBrandNextjs,
-  IconBrandPython,
-  IconBrandReact,
-  IconBrandTailwind,
-  IconBrandTypescript,
-} from "@tabler/icons-react";
-import { delay, motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
-import { skillItems } from "./lib/skills";
-import { type } from "os";
+import { motion } from "framer-motion";
+import React from "react";
+import Education from "./components/about/education";
+import Skills from "./components/about/skills";
 
 const About = () => {
-  const skillsRef = useRef<HTMLDivElement | null>(null);
-
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -48,20 +37,6 @@ const About = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: [0.43, 0.13, 0.23, 0.96],
-      },
-    },
-  };
-
-  const skillVariants = {
-    hidden: { opacity: 0, x: "-100%" },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        dampness: 12,
-        duration: 0.5,
         ease: [0.43, 0.13, 0.23, 0.96],
       },
     },
@@ -103,33 +78,12 @@ const About = () => {
         </motion.button>
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <h2 className="pt-8 text-3xl font-semibold md:pt-12">Skills</h2>
-        <motion.div
-          ref={skillsRef}
-          variants={skillVariants}
-          className="flex flex-wrap"
-        >
-          {skillItems.map((skill, index) => (
-            <motion.ul key={index} className="p-2 md:max-w-2xl">
-              <motion.li
-                variants={skillVariants}
-                className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent"
-              >
-                <span className="text-xl text-black">{skill.name}</span>{" "}
-                <span>{skill.icon}</span>
-              </motion.li>
-            </motion.ul>
-          ))}
-        </motion.div>
-      </motion.div>
+      {/* SKILLS */}
+      <Skills />
 
       {/* EDUCATION */}
-      <h2 className="pt-8 text-3xl font-semibold">Education</h2>
+      <Education />
+
       {/* EXPERIENCES */}
     </section>
   );
