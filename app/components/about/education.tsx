@@ -19,7 +19,7 @@ const Education = () => {
           >
             <div className="flex items-center justify-between gap-2 p-4">
               <span className="rounded-full bg-accent p-1">{item.icon}</span>
-              <span className="rounded-md bg-primary text-base p-1 text-white">
+              <span className="rounded-md bg-primary p-1 text-sm text-white">
                 {item.year}
               </span>
             </div>
