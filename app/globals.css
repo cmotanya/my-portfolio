@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply relative bg-200 text-lg text-black;
+    @apply relative text-lg text-black;
   }
   /* body.no-scroll {
     @apply overflow-hidden;

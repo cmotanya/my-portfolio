@@ -67,7 +67,7 @@ const Carousel = () => {
   return (
     <div
       ref={carouselRef}
-      className="md: relative mx-auto w-full max-w-3xl scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10 md:h-[20rem]"
+      className="relative mx-auto h-[20rem] w-full max-w-3xl scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10"
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -125,8 +125,8 @@ const Carousel = () => {
             key={n}
             className={`h-8 w-8 rounded-full text-sm font-bold transition-all duration-300 ${
               currentIndex === n
-                ? "scale-110 bg-accent shadow-lg"
-                : "bg-secondary"
+                ? "scale-110 border-2 border-primary shadow-lg"
+                : ""
             }`}
             onClick={() => goToSlide(n)}
             aria-label={`Go to slide ${n}`}
