@@ -76,7 +76,7 @@ const Carousel = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="h-full w-full p-6"
+          className="h-full w-full overflow-hidden p-6"
         >
           <div className="flex h-full flex-col space-y-5">
             <div className="flex flex-col items-center">
