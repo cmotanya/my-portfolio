@@ -25,21 +25,21 @@ const WorkExperience = () => {
 
             <div
               className={cn(
-                "flex w-full flex-col gap-4 rounded-md p-3 shadow-2xl md:w-1/2",
+                "flex w-full flex-col gap-4 rounded-md border-2 border-gray-800 p-3 shadow-2xl md:w-1/2",
                 index % 2 === 0
-                  ? "bg-gradient-to-r from-secondary from-50%"
-                  : "bg-gradient-to-l from-secondary from-50%",
+                  ? "bg-gradient-to-r from-50%"
+                  : "bg-gradient-to-l from-50%",
               )}
             >
               <div className="flex justify-between">
-                <span>{item.company}</span>
+                <span className="font-semibold">{item.company}</span>
                 <span className="rounded-md bg-primary p-1 text-sm text-white">
                   {item.year}
                 </span>
               </div>
 
               <div className="flex flex-col">
-                <span>{item.title}</span>
+                <span className="italic">{item.title}</span>
                 <span>{item.location}</span>
               </div>
             </div>
