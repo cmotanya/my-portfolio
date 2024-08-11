@@ -67,7 +67,7 @@ const Carousel = () => {
   return (
     <div
       ref={carouselRef}
-      className="relative mx-auto h-[25rem] max-w-3xl scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10"
+      className="relative mx-auto mb-8 max-w-3xl scale-0 transform rounded-sm duration-300 md:mt-10"
     >
       <h3 className="mb-8 text-2xl font-semibold">What Our Clients Say</h3>
       <AnimatePresence mode="wait">
@@ -77,12 +77,13 @@ const Carousel = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="h-full w-full"
+          className="grid h-full grid-cols-3"
         >
-          <div className="grid h-3/4 grid-flow-col grid-cols-[1fr_2fr] gap-4 space-y-5 overflow-hidden rounded-md border-2 border-accent p-4 shadow-xl">
-            <motion.div
+          <div className="grid grid-flow-row-dense items-center gap-4 space-y-5 overflow-hidden rounded-md border-2 border-secondary bg-secondary p-4 shadow-xl">
+            {/* <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+              className="flex h-full w-full items-center justify-center"
             >
               <Image
                 priority
@@ -92,7 +93,7 @@ const Carousel = () => {
                 src={carouselItems[currentIndex].src}
                 alt=""
               />
-            </motion.div>
+            </motion.div> */}
 
             <div className="flex flex-col items-start">
               <motion.h4
@@ -120,7 +121,7 @@ const Carousel = () => {
       </AnimatePresence>
 
       {/* Dots */}
-      <div className="absolute -bottom-8 left-1/2 z-[20] mb-8 mt-12 flex -translate-x-1/2 items-center space-x-2">
+      <div className="absolute -bottom-10 left-1/2 z-[20] mb-8 mt-12 flex -translate-x-1/2 items-center space-x-2">
         {num.map((n) => (
           <button
             key={n}
