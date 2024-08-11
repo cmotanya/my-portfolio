@@ -1,5 +1,5 @@
 import React from "react";
-import { workExperience } from "./about/workExperience";
+import { workExperience } from "../lib/workExperience";
 import { cn } from "../utils/cn";
 
 const WorkExperience = () => {
@@ -25,21 +25,19 @@ const WorkExperience = () => {
 
             <div
               className={cn(
-                "flex w-full flex-col gap-4 rounded-md border-2 border-gray-800 p-3 shadow-2xl md:w-1/2",
-                index % 2 === 0
-                  ? "bg-gradient-to-r from-50%"
-                  : "bg-gradient-to-l from-50%",
+                "flex w-full flex-col gap-4 rounded-md border-2 border-secondary p-3 shadow-2xl md:w-1/2",
               )}
             >
-              <div className="flex justify-between">
-                <span className="font-semibold">{item.company}</span>
+              <div className="relative flex justify-between">
+                <span className="uppercase">{item.company}</span>
                 <span className="rounded-md bg-primary p-1 text-sm text-white">
                   {item.year}
                 </span>
               </div>
 
-              <div className="flex flex-col">
-                <span className="italic">{item.title}</span>
+              <div className="flex flex-col space-y-4 text-base font-semibold">
+                <span className="">{item.title}</span>
+                <span className="font-normal">{item.role}</span>
                 <span>{item.location}</span>
               </div>
             </div>
