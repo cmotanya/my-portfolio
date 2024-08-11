@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const Intro = () => {
   const [specialty, setSpecialty] = useState(0);
 
-  const specialties = ["Web Developer", "CCTV Systems", "Computer Services"];
+  const specialties = ["Web Development", "CCTV Systems", "Computer Services"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,14 +50,14 @@ const Intro = () => {
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="m-auto flex h-full w-full flex-col items-center justify-center space-y-6 border-2 border-red-500"
+        className="m-auto flex h-full flex-col items-center pt-20"
       >
         <Image
           src="/profile.jpg"
           alt="profile"
           width={300}
           height={300}
-          className="h-40 w-40 rounded-full object-cover object-center ring-4 ring-secondary ring-offset-4 md:h-52 md:w-52"
+          className="-mt-10 mb-4 h-40 w-40 rounded-full object-cover object-center ring-4 ring-secondary ring-offset-4 md:h-52 md:w-52"
         />
         <motion.div className="max-w-4xl space-y-6 text-center">
           <motion.p
@@ -78,7 +78,6 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ type: "spring", damping: 12, stiffness: 200 }}
-            className=""
           >
             Specializing in{" "}
             <span className="uppercase">{specialties[specialty]}</span>
