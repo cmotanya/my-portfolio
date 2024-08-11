@@ -79,43 +79,18 @@ const Carousel = () => {
           transition={{ duration: 0.5 }}
           className="grid h-full grid-cols-3"
         >
-          <div className="grid grid-flow-row-dense items-center gap-4 space-y-5 overflow-hidden rounded-md border-2 border-secondary bg-secondary p-4 shadow-xl">
-            {/* <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-              className="flex h-full w-full items-center justify-center"
-            >
-              <Image
-                priority
-                height={100}
-                width={100}
-                className="h-48 w-48 rounded-full object-cover object-center"
-                src={carouselItems[currentIndex].src}
-                alt=""
-              />
-            </motion.div> */}
-
-            <div className="flex flex-col items-start">
-              <motion.h4
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
-                className={cn("mb-2 text-lg font-semibold uppercase")}
-              >
-                {carouselItems[currentIndex].name}
-              </motion.h4>
-
-              <motion.p
-                initial={{ opacity: 0, y: 50 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5 },
-                }}
-                className="mb-4 text-balance text-base"
-              >
-                {carouselItems[currentIndex].text}
-              </motion.p>
-            </div>
+          <div className="grid grid-flow-col grid-cols-1 gap-4 text-base">
+            {carouselItems.map((item, index) => (
+              <div key={index} className="relative">
+                <span className="absolute top-[2rem] text-[8rem] text-secondary">
+                  &quot;
+                </span>
+                <blockquote className="flex flex-col gap-3 space-y-4 rounded-md border-2 border-accent p-3 shadow-2xl">
+                  <p className="font-semibold">{item.name}</p>
+                  <p>{item.text}</p>
+                </blockquote>
+              </div>
+            ))}
           </div>
         </motion.div>
       </AnimatePresence>

@@ -1,9 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Socials } from "./lib/socials";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Intro = () => {
+  const [specialty, setSpecialty] = useState(0);
+
+  const specialties = ["Web Developer", "CCTV Systems", "Computer Services"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSpecialty((specialty + 1) % specialties.length);
+    }, 5000); //change text every 5 seconds
+    return () => clearInterval(interval);
+  });
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
@@ -32,26 +44,44 @@ const Intro = () => {
   };
 
   return (
-    <section id="intro" className="h-dvh pt-[1rem] md:pt-[4rem]">
+    <section id="intro" className="h-dvh">
       <motion.div
         initial="hidden"
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="flex flex-col items-center justify-center space-y-6"
+        className="flex h-full flex-col items-center justify-center space-y-6"
       >
+        <Image
+          src="/profile.jpg"
+          alt="profile"
+          width={300}
+          height={300}
+          className="h-40 w-40 rounded-full object-cover object-center ring-4 ring-secondary ring-offset-4 md:h-52 md:w-52"
+        />
         <motion.div className="max-w-4xl space-y-6 text-center">
           <motion.p
             variants={itemVariants}
-            className="text-xl uppercase tracking-widest"
+            className="text-base font-semibold uppercase tracking-widest"
           >
-            hello, i&apos;m cornelius motanya
+            hello 👋, i&apos;m cornelius motanya
           </motion.p>
-          <motion.p className="text-5xl font-bold uppercase leading-tight tracking-wide md:text-6xl">
-            web developer <br></br> code poet <br></br> freelancer
-          </motion.p>
+
           <motion.p variants={itemVariants} className="text-balance text-2xl">
-            Passionate about creating exceptional experiences on the web.
+            Passionate about creating exceptional digital experiences and safety
+            through tech.
+          </motion.p>
+
+          <motion.p
+            key={specialty}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ type: "spring", damping: 12, stiffness: 200 }}
+            className=""
+          >
+            Specializing in{" "}
+            <span className="uppercase">{specialties[specialty]}</span>
           </motion.p>
         </motion.div>
 
@@ -71,23 +101,6 @@ const Intro = () => {
               download resume
             </a>
           </button>
-        </motion.div>
-
-        {/* social icons. Hidden on small screens */}
-        <motion.div
-          variants={itemVariants}
-          className="absolute left-10 top-1/4 hidden -translate-y-1/2 *:p-1 md:block"
-        >
-          {Socials.map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {social.icon}
-            </a>
-          ))}
         </motion.div>
       </motion.div>
     </section>

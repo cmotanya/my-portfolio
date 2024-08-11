@@ -5,7 +5,6 @@ import React from "react";
 import Education from "./components/about/education";
 import Skills from "./components/about/skills";
 import { Toaster } from "sonner";
-import JobExperience from "./components/workExperience";
 import WorkExperience from "./components/workExperience";
 
 const About = () => {
@@ -46,7 +45,10 @@ const About = () => {
   };
 
   return (
-    <section id="about-me" className="md:pt-0">
+    <section id="about-me" className="relative md:pt-0">
+      <div className="b absolute inset-0 whitespace-nowrap text-[10rem] font-bold text-gray-800/5">
+        ABOUT ME
+      </div>
       <motion.div
         initial="hidden"
         animate="visible"
