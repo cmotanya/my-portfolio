@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 const Intro = () => {
   const [specialty, setSpecialty] = useState(0);
 
-  const specialties = ["Web Development", "CCTV Systems", "Computer Services"];
+  const specialties = [
+    "Web Development 🌐",
+    "CCTV Systems 🎥",
+    "Computer Services 🔧",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,13 +48,13 @@ const Intro = () => {
   };
 
   return (
-    <section id="intro" className="h-dvh md:min-h-dvh">
+    <section id="intro" className="h-dvh">
       <motion.div
         initial="hidden"
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="m-auto flex h-full flex-col items-center pt-16 md:pt-20"
+        className="m-auto flex h-full flex-col items-center pt-16"
       >
         <Image
           src="/profile.jpg"
@@ -67,7 +71,7 @@ const Intro = () => {
             hello 👋, i&apos;m cornelius motanya
           </motion.p>
 
-          <motion.p variants={itemVariants} className="text-balance text-2xl">
+          <motion.p variants={itemVariants} className="text-balance text-xl">
             Passionate about creating exceptional digital experiences and safety
             through tech.
           </motion.p>
@@ -78,9 +82,9 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ type: "spring", damping: 12, stiffness: 200 }}
-            className="h-[4rem] overflow-hidden text-lg font-semibold uppercase"
+            className="h-[4rem] overflow-hidden text-2xl uppercase md:h-auto"
           >
-            Specializing in <span>{specialties[specialty]}</span>
+            Specialty in <span className="">{specialties[specialty]}</span>
           </motion.p>
         </motion.div>
 
