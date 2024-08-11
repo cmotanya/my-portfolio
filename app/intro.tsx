@@ -78,10 +78,9 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ type: "spring", damping: 12, stiffness: 200 }}
-            className="h-[4rem] overflow-hidden text-2xl font-semibold"
+            className="h-[4rem] overflow-hidden text-lg uppercase"
           >
-            Specializing in{" "}
-            <span className="uppercase">{specialties[specialty]}</span>
+            Specializing in <span>{specialties[specialty]}</span>
           </motion.p>
         </motion.div>
 
