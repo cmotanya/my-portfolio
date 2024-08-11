@@ -7,16 +7,12 @@ import { useEffect, useState } from "react";
 const Intro = () => {
   const [specialty, setSpecialty] = useState(0);
 
-  const specialties = [
-    "Web Development 🌐",
-    "CCTV Systems 🎥",
-    "Computer Services 🔧",
-  ];
+  const specialties = ["Web Development", "CCTV Systems", "Computer Services"];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSpecialty((specialty + 1) % specialties.length);
-    }, 5000); //change text every 5 seconds
+    }, 4000); //change text every 4 seconds
     return () => clearInterval(interval);
   });
 
@@ -71,7 +67,7 @@ const Intro = () => {
             hello 👋, i&apos;m cornelius motanya
           </motion.p>
 
-          <motion.p variants={itemVariants} className="text-balance text-xl">
+          <motion.p variants={itemVariants} className="text-balance text-2xl">
             Passionate about creating exceptional digital experiences and safety
             through tech.
           </motion.p>
@@ -82,7 +78,7 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ type: "spring", damping: 12, stiffness: 200 }}
-            className="h-[4rem] overflow-hidden text-2xl uppercase md:h-auto"
+            className="h-[4rem] overflow-hidden text-xl uppercase md:h-auto"
           >
             Specialty in <span className="">{specialties[specialty]}</span>
           </motion.p>
