@@ -51,7 +51,7 @@ const MobileHeader = () => {
 
   return (
     <>
-      <div className="fixed right-5 top-3 z-[1002] block md:hidden">
+      <div className="fixed right-5 top-3 z-[2002] block md:hidden">
         <HamburgerMenu onclick={toggleMenu} isOpen={isOpen} />
       </div>
 

@@ -44,13 +44,13 @@ const Intro = () => {
   };
 
   return (
-    <section id="intro" className="h-dvh">
+    <section id="intro" className="h-dvh md:min-h-dvh">
       <motion.div
         initial="hidden"
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="flex h-full flex-col items-center justify-center space-y-6"
+        className="m-auto flex h-full w-full flex-col items-center justify-center space-y-6 border-2 border-red-500"
       >
         <Image
           src="/profile.jpg"
@@ -74,9 +74,9 @@ const Intro = () => {
 
           <motion.p
             key={specialty}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -50 }}
             transition={{ type: "spring", damping: 12, stiffness: 200 }}
             className=""
           >
