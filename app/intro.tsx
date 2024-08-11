@@ -50,7 +50,7 @@ const Intro = () => {
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="m-auto flex h-full flex-col items-center pt-20"
+        className="m-auto flex h-full flex-col items-center pt-16 md:pt-20"
       >
         <Image
           src="/profile.jpg"
@@ -78,6 +78,7 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ type: "spring", damping: 12, stiffness: 200 }}
+            className="h-[4rem] overflow-hidden text-2xl font-semibold"
           >
             Specializing in{" "}
             <span className="uppercase">{specialties[specialty]}</span>
