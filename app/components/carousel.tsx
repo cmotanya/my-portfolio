@@ -67,8 +67,9 @@ const Carousel = () => {
   return (
     <div
       ref={carouselRef}
-      className="relative mx-auto h-[20rem] w-full max-w-3xl scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10"
+      className="relative mx-auto h-[25rem] max-w-3xl scale-0 transform overflow-hidden rounded-sm duration-300 md:mt-10"
     >
+      <h3 className="mb-8 text-2xl font-semibold">What Our Clients Say</h3>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -76,10 +77,24 @@ const Carousel = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="h-full w-full overflow-hidden p-6"
+          className="h-full w-full"
         >
-          <div className="flex h-full flex-col space-y-5">
-            <div className="flex flex-col items-center">
+          <div className="grid h-3/4 grid-flow-col grid-cols-[1fr_2fr] gap-4 space-y-5 overflow-hidden rounded-md border-2 border-accent p-4 shadow-xl">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+            >
+              <Image
+                priority
+                height={100}
+                width={100}
+                className="h-48 w-48 rounded-full object-cover object-center"
+                src={carouselItems[currentIndex].src}
+                alt=""
+              />
+            </motion.div>
+
+            <div className="flex flex-col items-start">
               <motion.h4
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
@@ -88,38 +103,24 @@ const Carousel = () => {
                 {carouselItems[currentIndex].name}
               </motion.h4>
 
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.5 },
+                }}
+                className="mb-4 text-balance text-base"
               >
-                <Image
-                  priority
-                  height={100}
-                  width={100}
-                  className="mx-auto h-16 w-16 rounded-full object-cover object-center"
-                  src={carouselItems[currentIndex].src}
-                  alt=""
-                />
-              </motion.div>
+                {carouselItems[currentIndex].text}
+              </motion.p>
             </div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.5 },
-              }}
-              className="mb-4 text-balance text-center text-xl"
-            >
-              {carouselItems[currentIndex].text}
-            </motion.p>
           </div>
         </motion.div>
       </AnimatePresence>
 
       {/* Dots */}
-      <div className="absolute bottom-2 left-1/2 z-[20] mt-12 flex -translate-x-1/2 items-center space-x-2">
+      <div className="absolute -bottom-8 left-1/2 z-[20] mb-8 mt-12 flex -translate-x-1/2 items-center space-x-2">
         {num.map((n) => (
           <button
             key={n}

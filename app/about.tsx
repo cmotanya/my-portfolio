@@ -56,7 +56,7 @@ const About = () => {
       >
         <motion.div variants={textVariants} className="space-y-4">
           <h1>About Me</h1>
-          <p className="text-lg">
+          <p className="text-base">
             Having a background in IT and love of learning new technologies, I
             realized that I can help people with their needs by writing code. My
             determination to learn and improve my skills initially started in
@@ -64,7 +64,7 @@ const About = () => {
             JavaScript and TypeScript where I found my passion for front-end
             development.
           </p>
-          <p className="text-lg">
+          <p className="text-base">
             Alongside being a front-end developer, I am also a freelance
             technician specializing in cctv, networking and security. Any leads
             you may have in any of these areas are welcome.
