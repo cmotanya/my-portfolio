@@ -5,7 +5,8 @@ import React from "react";
 import Education from "./components/about/education";
 import Skills from "./components/about/skills";
 import { Toaster } from "sonner";
-import JobExperience from "./components/jobExperience";
+import JobExperience from "./components/workExperience";
+import WorkExperience from "./components/workExperience";
 
 const About = () => {
   const containerVariants = {
@@ -86,7 +87,8 @@ const About = () => {
       {/* EDUCATION */}
       <Education />
 
-      {/* EXPERIENCES */}
+      {/* WORK */}
+      <WorkExperience />
 
       <Toaster position="top-center" richColors duration={3000} />
     </section>
