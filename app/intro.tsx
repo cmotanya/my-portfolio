@@ -67,7 +67,7 @@ const Intro = () => {
             hello 👋, i&apos;m cornelius motanya
           </motion.p>
 
-          <motion.p variants={itemVariants} className="text-balance text-2xl">
+          <motion.p variants={itemVariants} className="text-balance text-xl">
             Passionate about creating exceptional digital experiences and safety
             through tech.
           </motion.p>
