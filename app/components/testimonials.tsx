@@ -64,13 +64,16 @@ const Testimonial = () => {
   };
 
   return (
-    <div ref={carouselRef} className="relative mb-8 max-w-3xl md:mt-10">
+    <div
+      ref={carouselRef}
+      className="relative mb-8 w-full md:mt-10 md:max-w-3xl"
+    >
       <h3 className="mb-6 mt-4 text-2xl font-semibold md:mb-10">
         What Our Clients Say
       </h3>
 
       <div className="relative h-[400px] w-full">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout">
           {[-1, 0, 1].map((offset) => {
             const index = getTestimonialIndex(offset);
             const testimonial = testimonials[index];
@@ -92,11 +95,11 @@ const Testimonial = () => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="absolute left-0 top-0 h-full w-full max-w-md md:left-[20%]"
+                className="absolute left-9 top-0 h-full w-[80%] md:left-[20%] md:w-full"
               >
                 <div
                   className={cn(
-                    "relative mx-auto mt-10 flex transform flex-col items-center gap-1 rounded-md border-2 border-primary bg-100 p-3 pt-[2.5rem] shadow-xl",
+                    "relative mx-auto mt-10 flex w-full transform flex-col items-center gap-1 rounded-md border-2 border-primary bg-100 p-3 pt-[2.5rem] shadow-xl",
                     offset === 0 ? "z-10 scale-100" : "z-0 scale-90 blur-sm",
                   )}
                 >
