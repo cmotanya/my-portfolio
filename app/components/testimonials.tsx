@@ -1,59 +1,143 @@
-import React from "react";
-import { carouselItems } from "../lib/carousel";
+"use client";
 
-export const Testimonials = () => {
+import { useCallback, useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { IntroSection } from "../lib/introSection";
+import { testimonials } from "../lib/testimonials";
+import Image from "next/image";
+import { cn } from "../utils/cn";
+
+const Testimonial = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
+
+  const carouselRef = useRef(null);
+  const interval = 5000;
+
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (isTransitioning) return;
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 500);
+    },
+    [isTransitioning],
+  );
+
+  const goToNext = useCallback(() => {
+    const isLastSlide = currentIndex === IntroSection.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    const timer = setInterval(goToNext, interval);
+    return () => clearInterval(timer);
+  }, [goToNext]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "scale-0");
+            entry.target.classList.add("opacity-100", "scale-100");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    const currentRef = carouselRef.current;
+
+    if (currentRef) observer.observe(currentRef);
+
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
+  }, []);
+
+  const getTestimonialIndex = (offset: number) => {
+    return (currentIndex + offset + testimonials.length) % testimonials.length;
+  };
+
   return (
-    <div>
-      <h3 className="my-5 text-2xl font-semibold">What our clients say</h3>
+    <div ref={carouselRef} className="relative mb-8 max-w-3xl md:mt-10">
+      <h3 className="mb-6 mt-4 text-2xl font-semibold md:mb-10">
+        What Our Clients Say
+      </h3>
 
-      <div className="grid grid-cols-1 gap-4 text-base md:grid-flow-col md:grid-cols-3">
-        {carouselItems.map((item, index) => (
-          <div key={index} className="relative">
-            <span className="absolute top-[6rem] text-[8rem] text-secondary">
-              <QuotationMark />
-            </span>
-            <blockquote className="flex flex-col gap-3 space-y-4 rounded-md border-2 border-accent p-3 shadow-2xl">
-              <p className="font-semibold">{item.name}</p>
-              <p>{item.text}</p>
-            </blockquote>
-          </div>
-        ))}
+      <div className="relative h-[400px] w-full">
+        <AnimatePresence mode="wait">
+          {[-1, 0, 1].map((offset) => {
+            const index = getTestimonialIndex(offset);
+            const testimonial = testimonials[index];
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 80 * offset }}
+                animate={{
+                  opacity: 1,
+                  x:
+                    offset === -1
+                      ? "-20%"
+                      : offset === 1
+                        ? "20%"
+                        : `${30 * offset}%`,
+                  scale: offset === 0 ? 1 : 0.9,
+                  zIndex: offset === 0 ? 2 : 1,
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute left-0 top-0 h-full w-full max-w-md md:left-[20%]"
+              >
+                <div
+                  className={cn(
+                    "relative mx-auto mt-10 flex transform flex-col items-center gap-1 rounded-md bg-secondary p-3 pt-[2.5rem] shadow-xl",
+                    offset === 0 ? "z-10 scale-100" : "z-0 scale-90 blur-sm",
+                  )}
+                >
+                  <Image
+                    src={testimonial.src}
+                    alt="profile"
+                    width={100}
+                    height={100}
+                    className="absolute -top-10 size-24 rounded-full object-cover object-center"
+                  />
+                  <p className="mt-5 font-semibold">{testimonial.name}</p>
+                  <p className="text-base font-semibold">
+                    {testimonial.jobTitle}
+                  </p>
+                  <p className="text-center text-base">{testimonial.text}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
       </div>
+
+      {/* Dots */}
+      {/* <div className="absolute -bottom-[5rem] left-1/2 z-[20] mb-8 mt-12 flex -translate-x-1/2 items-center space-x-2">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            className={`h-8 w-8 rounded-full text-sm font-bold transition-all duration-300 ${
+              currentIndex === index
+                ? "scale-110 border-2 border-primary shadow-lg"
+                : ""
+            }`}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to slide ${index}`}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div> */}
     </div>
   );
 };
 
-const QuotationMark = ({ size = 48, color = "#000000" }) => {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M10 10.5C10 11.3284 9.32843 12 8.5 12C7.67157 12 7 11.3284 7 10.5C7 9.67157 7.67157 9 8.5 9C9.32843 9 10 9.67157 10 10.5Z"
-        fill={color}
-      />
-      <path
-        d="M17 10.5C17 11.3284 16.3284 12 15.5 12C14.6716 12 14 11.3284 14 10.5C14 9.67157 14.6716 9 15.5 9C16.3284 9 17 9.67157 17 10.5Z"
-        fill={color}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M10 6.5C10 5.11929 8.88071 4 7.5 4C6.11929 4 5 5.11929 5 6.5V13.5C5 14.8807 6.11929 16 7.5 16C8.88071 16 10 14.8807 10 13.5V6.5ZM7.5 6C7.22386 6 7 6.22386 7 6.5V13.5C7 13.7761 7.22386 14 7.5 14C7.77614 14 8 13.7761 8 13.5V6.5C8 6.22386 7.77614 6 7.5 6Z"
-        fill={color}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M19 6.5C19 5.11929 17.8807 4 16.5 4C15.1193 4 14 5.11929 14 6.5V13.5C14 14.8807 15.1193 16 16.5 16C17.8807 16 19 14.8807 19 13.5V6.5ZM16.5 6C16.2239 6 16 6.22386 16 6.5V13.5C16 13.7761 16.2239 14 16.5 14C16.7761 14 17 13.7761 17 13.5V6.5C17 6.22386 16.7761 6 16.5 6Z"
-        fill={color}
-      />
-    </svg>
-  );
-};
-
-export default QuotationMark;
+export default Testimonial;

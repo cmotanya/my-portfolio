@@ -59,7 +59,7 @@ const Intro = () => {
           height={300}
           className="-mt-10 mb-4 h-40 w-40 rounded-full object-cover object-center ring-4 ring-secondary ring-offset-4 md:h-52 md:w-52"
         />
-        <motion.div className="max-w-4xl space-y-6 text-center">
+        <motion.div className="max-w-4xl space-y-8 text-center">
           <motion.p
             variants={itemVariants}
             className="text-base font-semibold uppercase tracking-widest"
@@ -86,7 +86,7 @@ const Intro = () => {
 
         <motion.div
           variants={itemVariants}
-          className="flex w-full flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-6"
+          className="flex w-full flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-10"
         >
           <button className="w-full rounded-md px-4 py-2 ring-2 ring-primary md:w-fit">
             {" "}

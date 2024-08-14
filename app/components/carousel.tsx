@@ -4,8 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IntroSection } from "../lib/introSection";
 import { Merienda } from "next/font/google";
-import { cn } from "../utils/cn";
-import { carouselItems } from "../lib/carousel";
+import { testimonials } from "../lib/testimonials";
 import Image from "next/image";
 
 const merienda = Merienda({ subsets: ["latin"] });
@@ -80,15 +79,20 @@ const Carousel = () => {
           className="grid h-full grid-cols-3"
         >
           <div className="grid grid-flow-col grid-cols-1 gap-4 text-base">
-            {carouselItems.map((item, index) => (
-              <div key={index} className="relative">
-                <span className="absolute top-[2rem] text-[8rem] text-secondary">
-                  &quot;
-                </span>
-                <blockquote className="flex flex-col gap-3 space-y-4 rounded-md border-2 border-accent p-3 shadow-2xl">
-                  <p className="font-semibold">{item.name}</p>
-                  <p>{item.text}</p>
-                </blockquote>
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className="relative mt-10 flex flex-col items-center gap-3 space-y-4 rounded-md bg-secondary p-3 pt-[2.5rem] shadow-2xl"
+              >
+                <Image
+                  src={item.src}
+                  alt="profile"
+                  width={100}
+                  height={100}
+                  className="absolute -top-10 size-24 rounded-full object-cover object-center"
+                />
+                <p className="font-semibold">{item.name}</p>
+                <p className="text-center">{item.text}</p>
               </div>
             ))}
           </div>

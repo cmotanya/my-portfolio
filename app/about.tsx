@@ -46,7 +46,7 @@ const About = () => {
 
   return (
     <section id="about-me" className="relative md:pt-0">
-      <div className="b absolute inset-0 whitespace-nowrap text-[10rem] font-bold text-gray-800/5">
+      <div className="absolute inset-0 whitespace-nowrap text-[10rem] font-bold text-gray-800/5">
         ABOUT ME
       </div>
       <motion.div
@@ -58,7 +58,7 @@ const About = () => {
       >
         <motion.div variants={textVariants} className="space-y-4">
           <h1>About Me</h1>
-          <p className="text-base">
+          <p>
             Having a background in IT and love of learning new technologies, I
             realized that I can help people with their needs by writing code. My
             determination to learn and improve my skills initially started in
@@ -66,7 +66,7 @@ const About = () => {
             JavaScript and TypeScript where I found my passion for front-end
             development.
           </p>
-          <p className="text-base">
+          <p>
             Alongside being a front-end developer, I am also a freelance
             technician specializing in cctv, networking and security. Any leads
             you may have in any of these areas are welcome.
