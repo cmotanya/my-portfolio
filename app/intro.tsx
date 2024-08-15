@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import DownArrow from "./components/down-arrow";
 
 const Intro = () => {
   const [specialty, setSpecialty] = useState(0);
@@ -44,13 +45,13 @@ const Intro = () => {
   };
 
   return (
-    <section id="intro" className="h-dvh">
+    <section id="intro" className="relative -mt-[5rem] min-h-dvh">
       <motion.div
         initial="hidden"
         animate="visible"
         whileInView={"visible"}
         variants={containerVariants}
-        className="m-auto flex h-full flex-col items-center pt-16"
+        className="m-auto flex h-full flex-col items-center pt-[9rem]"
       >
         <Image
           src="/profile.jpg"
@@ -102,6 +103,8 @@ const Intro = () => {
           </button>
         </motion.div>
       </motion.div>
+
+      {/* <DownArrow /> */}
     </section>
   );
 };
