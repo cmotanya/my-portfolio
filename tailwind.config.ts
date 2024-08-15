@@ -33,16 +33,6 @@ const config: Config = {
         secondary: "var(--secondary)",
         accent: "var(--accent)",
       } as ColorType,
-
-      animation: {
-        scroll: "scroll 20s linear infinite",
-      },
-
-      keyframes: {
-        scroll: {
-          to: { transform: "translateX(-100%)" },
-        },
-      },
     },
   },
   plugins: [],

@@ -49,12 +49,12 @@ const Skills = () => {
       <h2 className="text-3xl font-semibold">Skills</h2>
 
       <motion.div variants={skillVariants} className="flex gap-4">
-        <motion.ul className="flex min-w-full animate-scroll items-center justify-between gap-4 p-2">
+        <motion.ul className="flex max-w-full animate-scroll items-center justify-between gap-[20px] p-2">
           {skillItems.map((skill, index) => (
             <motion.li
               key={index}
               variants={skillVariants}
-              className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent"
+              className="flex items-center rounded-lg px-4 py-2 shadow-md ring-2 ring-accent"
             >
               <span className="text-xl text-black">{skill.name}</span>{" "}
               <span>{skill.icon}</span>
