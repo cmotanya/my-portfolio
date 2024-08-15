@@ -95,7 +95,7 @@ const Testimonial = () => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="absolute left-9 top-0 h-full w-[80%] md:left-[20%] md:w-full"
+                className="absolute left-9 top-0 h-full w-[80%] max-w-md md:left-[20%]"
               >
                 <div
                   className={cn(

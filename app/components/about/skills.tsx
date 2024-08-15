@@ -1,9 +1,9 @@
 import { skillItems } from "@/app/lib/skills";
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const Skills = () => {
-  const skillsRef = useRef(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -31,6 +31,14 @@ const Skills = () => {
     },
   };
 
+  useEffect(() => {
+    if (listRef.current) {
+      const clone = listRef.current.cloneNode(true) as HTMLElement;
+      clone.setAttribute("aria-hidden", "true");
+      listRef.current.parentNode?.appendChild(clone);
+    }
+  }, []);
+
   return (
     <motion.div
       initial="hidden"
@@ -39,22 +47,31 @@ const Skills = () => {
       className="pt-8 md:pt-12"
     >
       <h2 className="text-3xl font-semibold">Skills</h2>
-      <motion.div
-        ref={skillsRef}
-        variants={skillVariants}
-        className="flex flex-wrap"
-      >
-        {skillItems.map((skill, index) => (
-          <motion.ul key={index} className="p-2 md:max-w-2xl">
+
+      <motion.div variants={skillVariants} className="flex gap-4">
+        <motion.ul className="flex min-w-full animate-scroll items-center justify-between gap-4 p-2">
+          {skillItems.map((skill, index) => (
             <motion.li
+              key={index}
               variants={skillVariants}
               className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent"
             >
               <span className="text-xl text-black">{skill.name}</span>{" "}
               <span>{skill.icon}</span>
             </motion.li>
-          </motion.ul>
-        ))}
+          ))}
+          {skillItems.map((skill, index) => (
+            <motion.li
+              key={`duplicate-${index}`}
+              aria-hidden
+              variants={skillVariants}
+              className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md ring-2 ring-accent"
+            >
+              <span className="text-xl text-black">{skill.name}</span>{" "}
+              <span>{skill.icon}</span>
+            </motion.li>
+          ))}
+        </motion.ul>
       </motion.div>
     </motion.div>
   );
