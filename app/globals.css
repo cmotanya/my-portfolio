@@ -96,7 +96,7 @@
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(calc(-100% - 0.5rem));
+      transform: translateX(calc(-50%));
     }
   }
 }
