@@ -41,7 +41,7 @@
   }
 
   body {
-    @apply font-gambarino relative bg-900 text-lg text-white antialiased;
+    @apply font-gambarino relative bg-900 text-xl text-white antialiased;
   }
 
   main {
