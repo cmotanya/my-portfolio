@@ -2,11 +2,16 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import { Bebas_Neue } from "next/font/google";
 import Education from "./components/about/education";
 import Skills from "./components/about/skills";
 import { Toaster } from "sonner";
 import WorkExperience from "./components/workExperience";
 
+const neue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 const About = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -57,7 +62,7 @@ const About = () => {
         className="space-y-4"
       >
         <motion.div variants={textVariants} className="space-y-4">
-          <h1 className="">About Me</h1>
+          <h1 className={neue.className}>About Me</h1>
           <p>
             Having a background in IT and love of learning new technologies, I
             realized that I can help people with their needs by writing code. My
