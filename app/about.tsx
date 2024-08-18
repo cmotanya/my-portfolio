@@ -81,8 +81,6 @@ const About = () => {
         >
           Hire Me
         </motion.button>
-
-        <button>button</button>
       </motion.div>
 
       {/* SKILLS */}
