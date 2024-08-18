@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         gambarino: ["Gambarino", "sans-serif"],
+        britney: ["Britney", "sans-serif"],
       },
 
       colors: {

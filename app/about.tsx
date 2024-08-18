@@ -57,7 +57,7 @@ const About = () => {
         className="space-y-4"
       >
         <motion.div variants={textVariants} className="space-y-4">
-          <h1>About Me</h1>
+          <h1 className="font-britney">About Me</h1>
           <p>
             Having a background in IT and love of learning new technologies, I
             realized that I can help people with their needs by writing code. My
