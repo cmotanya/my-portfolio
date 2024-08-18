@@ -8,7 +8,7 @@ import { cn } from "@/app/utils/cn";
 const Education = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
   return (
-    <div className="my-16 rounded-2xl bg-gray-900 p-8">
+    <div className="my-16 rounded-2xl">
       <h2 className="mb-4 text-center text-4xl font-bold text-teal-400">
         Educational Journey
       </h2>
@@ -60,7 +60,7 @@ const JourneyPoint = ({
 }: JourneyPointProps) => {
   return (
     <div className="mb-2 flex">
-      <div className="mr-6 flex flex-col items-center">
+      <div className="mr-3 flex flex-col items-center">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -76,7 +76,7 @@ const JourneyPoint = ({
         >
           <IconSchool size={24} className="text-900" />
         </motion.div>
-        <div className="mt-2 h-full w-0.5 bg-teal-500"></div>
+        {/* <div className="mt-2 h-full w-0.5 bg-teal-500"></div> */}
       </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -88,14 +88,14 @@ const JourneyPoint = ({
           className="cursor-pointer p-6"
           onClick={() => setActiveItem(isActive ? null : item.year)}
         >
-          <div className="mb-2 flex items-center justify-between">
+          <div className="mb-2 flex flex-col-reverse justify-between md:flex-row md:items-center">
             <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
             <div className="flex items-center text-400">
               <IconCalendar size={18} className="mr-2" />
               <span className="font-semibold">{item.year}</span>
             </div>
           </div>
-          <p className="mb-2 text-lg text-300">{item.institution}</p>
+          <p className="text-lg text-300">{item.institution}</p>
           <div className="flex items-center text-500">
             <IconMapPin size={18} className="mr-2" />
             <p className="text-sm">{item.location}</p>
