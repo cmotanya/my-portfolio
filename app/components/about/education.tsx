@@ -2,104 +2,102 @@ import { educationItems } from "@/app/lib/educationItems";
 import React, { useState } from "react";
 import DownloadResume from "./downloadResume";
 import { motion, AnimatePresence } from "framer-motion";
-import { IconMinus, IconPlus } from "@tabler/icons-react";
+import { IconMapPin, IconRoute } from "@tabler/icons-react";
 import { cn } from "@/app/utils/cn";
 
 const Education = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
-
-  const toggleItem = (year: string) => {
-    setOpenItem(openItem === year ? null : year);
-  };
-
+  const [isActiveItem, setIsActiveItem] = useState<string | null>(null);
   return (
-    <section className="space-y-6 pt-12 md:pt-16">
-      <h2 className="text-3xl font-bold text-primary">Education Journey</h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {educationItems.map((item, index) => (
-          <EducationItem
-            key={item.year}
-            item={item}
-            isOpen={openItem === item.year}
-            toggleItem={toggleItem}
-            index={index}
-          />
-        ))}
+    <div className="my-16 h-[15rem]">
+      <h2 className="mb-12 text-3xl font-semibold">Education Journey Map</h2>
+
+      <div className="relative mx-auto mb-24 max-w-full">
+        {/* <div className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 transform bg-secondary"></div> */}
+
+        <div className="relative flex justify-between">
+          {educationItems.map((item, index) => (
+            <JourneyPoint
+              key={index}
+              item={item}
+              isActive={isActiveItem === item.year}
+              setActiveItem={setIsActiveItem}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
-      <DownloadResume />
-    </section>
+
+      {/* <div className="mt-24">
+        <DownloadResume />
+      </div> */}
+    </div>
   );
 };
 
 export default Education;
 
-interface EducationItemProps {
-  item: {
-    icon: React.ReactNode;
-    year: string;
-    degree: string;
-    location: string;
-    institution: string;
-  };
-  isOpen: boolean;
-  toggleItem: (year: string) => void;
+interface EducationItem {
+  degree: string;
+  year: string;
+  institution: string;
+  location: string;
+  icon: React.ReactNode;
+}
+interface JourneyPointProps {
+  item: EducationItem;
+  isActive: boolean;
+  setActiveItem: (year: string | null) => void;
   index: number;
 }
-
-const EducationItem = ({
+const JourneyPoint = ({
   item,
-  isOpen,
-  toggleItem,
+  isActive,
+  setActiveItem,
   index,
-}: EducationItemProps) => {
+}: JourneyPointProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-background flex flex-col justify-between rounded-lg border-2 border-accent p-6 shadow-lg transition-all hover:shadow-xl"
-    >
-      <div className="flex items-center justify-between">
-        <span className="rounded-full bg-accent p-2 text-primary">
-          {item.icon}
-        </span>
-        <span className="rounded-md bg-primary px-3 py-1 text-sm font-medium text-white">
-          {item.year}
-        </span>
-      </div>
-
-      <h3 className="mt-4 text-xl font-semibold text-primary">{item.degree}</h3>
-
-      <button
-        onClick={() => toggleItem(item.year)}
+    <div className="group relative w-full">
+      <motion.button
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+          delay: index * 0.2,
+        }}
+        onClick={() => setActiveItem(isActive ? null : item.year)}
         className={cn(
-          "mt-4 w-full transform rounded-md border-2 border-accent px-4 py-2 font-medium transition-all duration-300 ease-in-out hover:bg-accent hover:text-primary",
-          isOpen &&
-            "hover:bg-secondary/90 border-secondary bg-secondary text-white",
+          "absolute left-1/2 top-1/2 -ml-5 mt-1 flex size-10 grow basis-0 -translate-x-1/2 -translate-y-1/2 transform place-content-center rounded-full border-2 border-primary transition-all duration-300 ease-in-out",
+          isActive ? "text-primary" : "text-100",
         )}
       >
-        <span className="flex items-center justify-center gap-2">
-          {isOpen ? "Hide Details" : "Show Details"}
-          {isOpen ? <IconMinus size={18} /> : <IconPlus size={18} />}
-        </span>
-      </button>
+        <IconMapPin size={26} className="m-auto" />
+      </motion.button>
+
+      <div className="absolute -top-[2rem] flex rounded-md bg-accent md:left-1/2 md:-translate-x-1/2 md:text-center">
+        <p className="p-1 text-base font-semibold">{item.year}</p>
+      </div>
 
       <AnimatePresence>
-        {isOpen && (
+        {isActive && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="mt-4 overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="group:w-full absolute left-1/2 top-[3rem] z-10 w-full -translate-x-1/2 transform rounded-md bg-secondary p-4 text-center text-base shadow-xl"
           >
-            <p className="text-sm text-gray-600">{item.location}</p>
-            <p className="mt-1 text-sm font-medium text-primary">
-              {item.institution}
-            </p>
+            <h3 className="pb-2 font-semibold leading-4">{item.degree}</h3>
+            <p className="text-sm">{item.institution}</p>
+            <p className="text-sm">{item.location}</p>
+
+            <div className="mt-5 flex justify-center gap-4">
+              <IconRoute size={18} />
+              <span className="text-sm">Journey Milestone</span>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 };
