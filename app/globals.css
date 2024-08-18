@@ -22,9 +22,9 @@
     --custom-900: #111827;
     --custom-950: #030712;
 
-    --primary: #453acc;
-    --secondary: #dc89e1;
-    --accent: #d96db8;
+    --primary: #4f27dd;
+    --secondary: #d8ec85;
+    --accent: #56e56f;
 
     --width: min(80ch, calc(100% - 0.5rem));
   }
