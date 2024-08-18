@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply relative bg-900 text-lg text-300 antialiased;
+    @apply relative bg-900 text-lg text-white antialiased;
   }
 
   main {
