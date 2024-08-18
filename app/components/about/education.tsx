@@ -62,7 +62,7 @@ const JourneyPoint = ({
   index,
 }: JourneyPointProps) => {
   return (
-    <div className="mb-8 flex">
+    <div className="mb-8 flex rounded-md border-2 border-accent p-4">
       <div className="mr-4 flex flex-col items-center">
         <div className="mb-2 rounded-md bg-secondary px-2 py-1 text-center text-sm font-semibold text-800">
           {item.year}
