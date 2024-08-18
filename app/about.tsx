@@ -45,7 +45,7 @@ const About = () => {
   };
 
   return (
-    <section id="about-me" className="relative md:pt-0">
+    <section id="about-me" className="relative pt-16 md:pt-0">
       <div className="absolute inset-0 whitespace-nowrap text-[10rem] font-bold text-gray-800/5">
         ABOUT ME
       </div>
