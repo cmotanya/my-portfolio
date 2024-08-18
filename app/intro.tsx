@@ -89,14 +89,14 @@ const Intro = () => {
           variants={itemVariants}
           className="flex w-full flex-col justify-center gap-4 pt-4 md:flex-row md:gap-8 md:pt-10"
         >
-          <button className="w-full rounded-md px-4 py-2 ring-2 ring-accent md:w-fit">
+          <button className="z-50 w-full rounded-md border border-accent px-4 py-2 md:w-fit">
             {" "}
             <a href="#href" className="text-xl uppercase">
               {" "}
               get in touch
             </a>
           </button>
-          <button className="w-full rounded-md bg-primary px-4 py-2 text-lg uppercase text-white md:w-fit">
+          <button className="z-50 w-full rounded-md bg-primary px-4 py-2 text-lg uppercase text-white md:w-fit">
             <a href="/resume.pdf" download="resume.pdf">
               download resume
             </a>

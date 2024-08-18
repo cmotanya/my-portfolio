@@ -8,7 +8,7 @@ import { cn } from "@/app/utils/cn";
 const Education = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
   return (
-    <div className="my-16 rounded-2xl bg-gray-900 p-8 shadow-2xl">
+    <div className="my-16 rounded-2xl bg-gray-900 p-8">
       <h2 className="mb-4 text-center text-4xl font-bold text-teal-400">
         Educational Journey
       </h2>
@@ -16,7 +16,7 @@ const Education = () => {
         Explore my academic milestones
       </p>
 
-      <div className="relative mx-auto max-w-3xl">
+      <div className="relative mx-auto w-full">
         {educationItems.map((item, index) => (
           <JourneyPoint
             key={index}
@@ -59,7 +59,7 @@ const JourneyPoint = ({
   index,
 }: JourneyPointProps) => {
   return (
-    <div className="mb-12 flex">
+    <div className="mb-2 flex">
       <div className="mr-6 flex flex-col items-center">
         <motion.div
           initial={{ scale: 0 }}
@@ -82,7 +82,7 @@ const JourneyPoint = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
-        className="flex-1 overflow-hidden rounded-xl border border-gray-700 bg-800 transition-all duration-300 hover:border-teal-500"
+        className="flex flex-1 overflow-hidden rounded-xl border border-gray-700 bg-800 transition-all duration-300 hover:border-teal-500"
       >
         <div
           className="cursor-pointer p-6"
@@ -101,21 +101,6 @@ const JourneyPoint = ({
             <p className="text-sm">{item.location}</p>
           </div>
         </div>
-        <AnimatePresence>
-          {isActive && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-700 px-6 pb-6"
-            >
-              <p className="text-300">
-                Additional details about the education can go here...
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.div>
     </div>
   );

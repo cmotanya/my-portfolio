@@ -44,7 +44,7 @@ const Skills = () => {
             <motion.li
               key={index}
               variants={skillVariants}
-              className="flex items-center gap-2 rounded-lg px-4 py-2 shadow-md bg-800"
+              className="flex items-center gap-2 rounded-lg border border-accent bg-800 px-4 py-2 shadow-md"
             >
               <span className="text-secondary">{skill.name}</span>{" "}
               <span>{skill.icon}</span>
