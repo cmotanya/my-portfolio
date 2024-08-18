@@ -34,14 +34,14 @@
   }
 
   body {
-    @apply relative bg-900 text-lg text-400;
+    @apply relative bg-900 text-lg text-white antialiased;
   }
   /* body.no-scroll {
     @apply overflow-hidden;
   } */
 
   main {
-    @apply mx-auto w-[var(--width)] overflow-hidden bg-900 px-2 md:px-0;
+    @apply mx-auto w-[var(--width)] overflow-hidden px-2 md:px-0;
   }
 }
 
