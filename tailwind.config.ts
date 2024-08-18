@@ -11,6 +11,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        gambarino: ["Gambarino", "sans-serif"],
+      },
+
       colors: {
         "50": "var(--custom-50)",
         "100": "var(--custom-100)",
