@@ -34,7 +34,7 @@
   }
 
   body {
-    @apply relative bg-950 text-lg text-white antialiased;
+    @apply relative bg-950 text-lg text-300 antialiased;
   }
   /* body.no-scroll {
     @apply overflow-hidden;
