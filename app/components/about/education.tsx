@@ -2,24 +2,21 @@ import { educationItems } from "@/app/lib/educationItems";
 import React, { useState } from "react";
 import DownloadResume from "./downloadResume";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  IconMapPin,
-  IconRoute,
-  IconChevronDown,
-  IconChevronUp,
-} from "@tabler/icons-react";
+import { IconMapPin, IconCalendar, IconSchool } from "@tabler/icons-react";
 import { cn } from "@/app/utils/cn";
 
 const Education = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
   return (
-    <div className="my-16">
-      <h2 className="mb-4 text-3xl font-semibold">Education Journey Map</h2>
-      <p className="mb-8 text-center text-gray-600">
-        Click on a milestone to view details
+    <div className="my-16 rounded-2xl bg-gray-900 p-8 shadow-2xl">
+      <h2 className="mb-4 text-center text-4xl font-bold text-teal-400">
+        Educational Journey
+      </h2>
+      <p className="mb-8 text-center text-400">
+        Explore my academic milestones
       </p>
 
-      <div className="relative mx-auto max-w-2xl">
+      <div className="relative mx-auto max-w-3xl">
         {educationItems.map((item, index) => (
           <JourneyPoint
             key={index}
@@ -31,7 +28,7 @@ const Education = () => {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
+      <div className="mt-12">
         <DownloadResume />
       </div>
     </div>
@@ -62,11 +59,8 @@ const JourneyPoint = ({
   index,
 }: JourneyPointProps) => {
   return (
-    <div className="mb-8 flex rounded-md border-2 border-accent p-4">
-      <div className="mr-4 flex flex-col items-center">
-        <div className="mb-2 rounded-md bg-secondary px-2 py-1 text-center text-sm font-semibold text-800">
-          {item.year}
-        </div>
+    <div className="mb-12 flex">
+      <div className="mr-6 flex flex-col items-center">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -77,48 +71,52 @@ const JourneyPoint = ({
             delay: index * 0.2,
           }}
           className={cn(
-            "flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary transition-all duration-300",
-            isActive ? "bg-primary text-white" : "bg-white text-primary",
+            "flex h-12 w-12 items-center justify-center rounded-full bg-teal-500",
           )}
         >
-          <IconMapPin size={20} />
+          <IconSchool size={24} className="text-900" />
         </motion.div>
+        <div className="mt-2 h-full w-0.5 bg-teal-500"></div>
       </div>
-      <div className="flex-1">
-        <button
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.2 }}
+        className="flex-1 overflow-hidden rounded-xl border border-gray-700 bg-800 transition-all duration-300 hover:border-teal-500"
+      >
+        <div
+          className="cursor-pointer p-6"
           onClick={() => setActiveItem(isActive ? null : item.year)}
-          className="w-full rounded-md bg-white p-4 text-left shadow-sm transition-all duration-300 hover:bg-gray-50 hover:shadow-md"
         >
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-semibold">{item.degree}</h3>
-              <p className="text-sm text-gray-600">{item.institution}</p>
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
+            <div className="flex items-center text-400">
+              <IconCalendar size={18} className="mr-2" />
+              <span className="font-semibold">{item.year}</span>
             </div>
-            {isActive ? (
-              <IconChevronUp size={20} className="text-primary" />
-            ) : (
-              <IconChevronDown size={20} className="text-gray-400" />
-            )}
           </div>
-          <AnimatePresence>
-            {isActive && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-                className="mt-4 overflow-hidden"
-              >
-                <p className="mb-4 text-sm text-gray-600">{item.location}</p>
-                <div className="flex items-center gap-2 text-primary">
-                  <IconRoute size={18} />
-                  <span className="text-sm">Journey Milestone</span>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </button>
-      </div>
+          <p className="mb-2 text-lg text-300">{item.institution}</p>
+          <div className="flex items-center text-500">
+            <IconMapPin size={18} className="mr-2" />
+            <p className="text-sm">{item.location}</p>
+          </div>
+        </div>
+        <AnimatePresence>
+          {isActive && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-700 px-6 pb-6"
+            >
+              <p className="text-300">
+                Additional details about the education can go here...
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };
