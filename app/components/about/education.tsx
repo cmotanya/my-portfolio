@@ -1,7 +1,7 @@
 import { educationItems } from "@/app/lib/educationItems";
 import React, { useState } from "react";
 import DownloadResume from "./downloadResume";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { IconMapPin, IconCalendar, IconSchool } from "@tabler/icons-react";
 import { cn } from "@/app/utils/cn";
 
