@@ -29,7 +29,7 @@
     --width: min(80ch, calc(100% - 0.5rem));
   }
 
-  @font-face {
+  /* @font-face {
     font-family: "Gambarino";
     src: url("./../public/ClashGrotesk-Regular.ttf") format("truetype");
     font-weight: 600;
@@ -41,14 +41,14 @@
     src: url("./../public/Britney-Regular.ttf") format("truetype");
     font-weight: 600;
     font-display: swap;
-  }
+  } */
 
   * {
     @apply m-0 box-border select-none !scroll-smooth p-0 focus-visible:outline-none;
   }
 
   body {
-    @apply font-gambarino relative bg-900 text-xl text-white antialiased;
+    @apply relative bg-900 text-xl text-white antialiased;
   }
 
   main {
