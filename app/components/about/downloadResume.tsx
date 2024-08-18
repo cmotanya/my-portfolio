@@ -44,7 +44,7 @@ const DownloadResume = () => {
       <button
         onClick={handleDownload}
         disabled={isDownloading}
-        className="ml-4 flex w-full transform items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-white shadow transition-all active:scale-105 md:w-fit"
+        className="flex w-full transform items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-white shadow transition-all active:scale-105 md:w-fit"
       >
         {isDownloading ? (
           <>
