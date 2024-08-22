@@ -45,7 +45,7 @@ const Intro = () => {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="container mx-auto flex h-full flex-col items-center justify-center px-4 md:py-8 py-4"
+        className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
       >
         <motion.div variants={itemVariants} className="mb-8">
           <Image
@@ -88,7 +88,7 @@ const Intro = () => {
 
         <motion.div
           variants={itemVariants}
-          className="mt-8 flex w-full justify-center flex-col gap-4 md:flex-row"
+          className="mt-8 flex w-full flex-col justify-center gap-4 md:flex-row"
         >
           <a
             href="#contact"
@@ -99,7 +99,7 @@ const Intro = () => {
           <a
             href="/resume.pdf"
             download="resume.pdf"
-            className="w-full rounded-full bg-accent px-8 py-3 text-center font-semibold text-white transition-colors md:w-fit"
+            className="w-full rounded-full bg-accent px-8 py-3 text-center font-semibold transition-colors md:w-fit"
           >
             Download Resume
           </a>
