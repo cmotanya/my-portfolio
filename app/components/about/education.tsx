@@ -17,13 +17,13 @@ const Education = () => {
     <div className="my-16 rounded-2xl">
       <h2
         className={cn(
-          "mb-4 text-center text-4xl font-bold text-800",
+          "text-center text-4xl font-bold text-800",
           neue.className,
         )}
       >
         Educational Journey
       </h2>
-      <p className="mb-8 text-center text-400">
+      <p className="mb-4 text-center text-400">
         Explore my academic milestones
       </p>
 
@@ -96,7 +96,7 @@ const JourneyPoint = ({
         className="flex flex-1 overflow-hidden rounded-md border-2 border-accent transition-all duration-300"
       >
         <div
-          className="p-6"
+          className="p-3"
           onClick={() => setActiveItem(isActive ? null : item.year)}
         >
           <div className="mb-2 flex flex-col-reverse justify-between md:flex-row md:items-center">
