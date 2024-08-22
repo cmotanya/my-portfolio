@@ -1,5 +1,5 @@
 import { IconCloudDownload } from "@tabler/icons-react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useCallback, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -56,7 +56,9 @@ const DownloadResume = () => {
             <motion.span variants={textVariant}>
               <IconCloudDownload aria-hidden="true" />
             </motion.span>
-            <motion.span variants={textVariant}>Download CV</motion.span>
+            <motion.span variants={textVariant} className="uppercase">
+              download resume
+            </motion.span>
           </>
         )}
       </button>
