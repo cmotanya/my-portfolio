@@ -51,8 +51,8 @@ const Intro = () => {
           <Image
             src="/profile.jpg"
             alt="Cornelius Motanya"
-            width={200}
-            height={200}
+            width={180}
+            height={180}
             className="rounded-full shadow-lg ring-4 ring-accent ring-offset-4 ring-offset-white"
           />
         </motion.div>
@@ -65,12 +65,12 @@ const Intro = () => {
             Hello, I&apos;m Cornelius Motanya
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-xl text-gray-700">
+          <motion.p variants={itemVariants} className="text-xl text-700">
             Passionate about creating exceptional digital experiences and safety
             through tech.
           </motion.p>
 
-          <motion.div
+          {/* <motion.div
             variants={itemVariants}
             className="h-16 overflow-hidden text-2xl font-semibold text-purple-600"
           >
@@ -83,23 +83,23 @@ const Intro = () => {
             >
               Specialty in {specialties[specialty]}
             </motion.p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="mt-12 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+          className="mt-8 flex w-full flex-col gap-4 sm:space-y-0 md:flex-row"
         >
           <a
             href="#contact"
-            className="rounded-full bg-indigo-600 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-indigo-700"
+            className="w-full rounded-full bg-primary px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700 md:w-fit"
           >
             Get in Touch
           </a>
           <a
             href="/resume.pdf"
             download="resume.pdf"
-            className="rounded-full bg-purple-500 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-purple-600"
+            className="w-full rounded-full bg-accent px-8 py-3 text-center font-semibold text-white transition-colors md:w-fit"
           >
             Download Resume
           </a>
