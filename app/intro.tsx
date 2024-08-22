@@ -45,7 +45,7 @@ const Intro = () => {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-8"
+        className="container mx-auto flex h-full flex-col items-center justify-center px-4 md:py-8 py-4"
       >
         <motion.div variants={itemVariants} className="mb-8">
           <Image
@@ -88,7 +88,7 @@ const Intro = () => {
 
         <motion.div
           variants={itemVariants}
-          className="mt-8 flex w-full flex-col gap-4 md:flex-row"
+          className="mt-8 flex w-full justify-center flex-col gap-4 md:flex-row"
         >
           <a
             href="#contact"
