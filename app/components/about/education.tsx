@@ -4,12 +4,23 @@ import DownloadResume from "./downloadResume";
 import { motion } from "framer-motion";
 import { IconMapPin, IconCalendar, IconSchool } from "@tabler/icons-react";
 import { cn } from "@/app/utils/cn";
+import { Bebas_Neue } from "next/font/google";
+
+const neue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const Education = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
   return (
     <div className="my-16 rounded-2xl">
-      <h2 className="mb-4 text-center text-4xl font-bold text-teal-400">
+      <h2
+        className={cn(
+          "mb-4 text-center text-4xl font-bold text-800",
+          neue.className,
+        )}
+      >
         Educational Journey
       </h2>
       <p className="mb-8 text-center text-400">
@@ -71,10 +82,10 @@ const JourneyPoint = ({
             delay: index * 0.2,
           }}
           className={cn(
-            "flex h-12 w-12 items-center justify-center rounded-full bg-teal-500",
+            "flex h-12 w-12 items-center justify-center rounded-full bg-primary",
           )}
         >
-          <IconSchool size={24} className="text-900" />
+          <IconSchool size={24} className="text-100" />
         </motion.div>
         {/* <div className="mt-2 h-full w-0.5 bg-teal-500"></div> */}
       </div>
@@ -82,21 +93,21 @@ const JourneyPoint = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
-        className="flex flex-1 overflow-hidden rounded-xl border border-gray-700 bg-800 transition-all duration-300 hover:border-teal-500"
+        className="flex flex-1 overflow-hidden rounded-md border-2 border-accent transition-all duration-300"
       >
         <div
-          className="cursor-pointer p-6"
+          className="p-6"
           onClick={() => setActiveItem(isActive ? null : item.year)}
         >
           <div className="mb-2 flex flex-col-reverse justify-between md:flex-row md:items-center">
-            <h3 className="text-xl font-bold text-teal-400">{item.degree}</h3>
-            <div className="flex items-center text-400">
+            <h3 className="text-xl font-bold">{item.degree}</h3>
+            <div className="flex items-center">
               <IconCalendar size={18} className="mr-2" />
               <span className="font-semibold">{item.year}</span>
             </div>
           </div>
-          <p className="text-lg text-300">{item.institution}</p>
-          <div className="flex items-center text-500">
+          <p className="text-lg text-500">{item.institution}</p>
+          <div className="flex items-center">
             <IconMapPin size={18} className="mr-2" />
             <p className="text-sm">{item.location}</p>
           </div>
