@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Spline_Sans } from "next/font/google";
 import "./globals.css";
 
-const nunito = Nunito({
+const nunito = Spline_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
