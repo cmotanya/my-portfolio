@@ -58,7 +58,7 @@ const Intro = () => {
           alt="profile"
           width={300}
           height={300}
-          className="-mt-10 mb-4 h-40 w-40 rounded-full object-cover object-center ring-4 ring-secondary ring-offset-4 ring-offset-900 md:h-52 md:w-52"
+          className="-mt-10 mb-4 size-[10rem] rounded-full object-cover object-center ring-4 ring-secondary ring-offset-4 ring-offset-inherit md:h-52 md:w-52"
         />
         <motion.div className="max-w-4xl space-y-8 text-center">
           <motion.p
