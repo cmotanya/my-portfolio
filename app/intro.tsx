@@ -57,7 +57,7 @@ const Intro = () => {
           />
         </motion.div>
 
-        <motion.div className="max-w-2xl space-y-6 text-center">
+        <motion.div className="max-w-2xl space-y-4 text-center">
           <motion.h1
             variants={itemVariants}
             className="text-3xl font-bold text-indigo-800 md:text-4xl"
@@ -88,7 +88,7 @@ const Intro = () => {
 
         <motion.div
           variants={itemVariants}
-          className="mt-8 flex w-full flex-col gap-4 sm:space-y-0 md:flex-row"
+          className="mt-8 flex w-full flex-col gap-4 md:flex-row"
         >
           <a
             href="#contact"
