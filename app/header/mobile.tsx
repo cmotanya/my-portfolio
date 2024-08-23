@@ -108,7 +108,7 @@ const MobileHeader = () => {
                       <IconMail className="mr-3 text-primary" />
                       <a
                         href="mailto:motanyac@gmail.com"
-                        className="hover:underline"
+                        className="lowercase hover:underline"
                       >
                         motanyac@gmail.com
                       </a>
@@ -119,7 +119,7 @@ const MobileHeader = () => {
                         (+254) 712-909-475
                       </a>
                     </li>
-                    <li className="flex items-center">
+                    <li className="flex items-center capitalize">
                       <IconMap className="mr-3 text-primary" />
                       <span>Mombasa, Kenya</span>
                     </li>
