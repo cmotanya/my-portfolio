@@ -1,4 +1,4 @@
-const nav = [
+export const nav = [
   {
     name: "Home",
     href: "/",
@@ -8,7 +8,7 @@ const nav = [
     href: "#about-me",
   },
   {
-    name: "projects",
+    name: "Projects",
     href: "#projects",
   },
 

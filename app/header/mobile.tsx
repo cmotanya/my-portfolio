@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import nav from "./navigation";
+import nav from "../lib/navigation";
 import HamburgerMenu from "./hamburger";
 import { cn } from "../utils/cn";
 import {
