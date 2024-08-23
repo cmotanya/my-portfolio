@@ -7,12 +7,7 @@ import { useRouter } from "next/navigation";
 import nav from "../lib/navigation";
 import HamburgerMenu from "./hamburger";
 import { cn } from "../utils/cn";
-import {
-  IconDeviceMobile,
-  IconMail,
-  IconMap,
-  IconMapCheck,
-} from "@tabler/icons-react";
+import { IconDeviceMobile, IconMail, IconMap } from "@tabler/icons-react";
 
 const MobileHeader = () => {
   const [activeLink, setActiveLink] = useState(nav[0].href);
@@ -108,7 +103,7 @@ const MobileHeader = () => {
                   className="rounded-t-lg bg-gray-100 p-6"
                 >
                   <h3 className="mb-4 text-lg font-semibold">Contact Me</h3>
-                  <ul className="space-y-3 lowercase">
+                  <ul className="space-y-3 text-base lowercase">
                     <li className="flex items-center">
                       <IconMail className="mr-3 text-primary" />
                       <a
