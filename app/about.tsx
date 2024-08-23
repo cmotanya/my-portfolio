@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Bebas_Neue } from "next/font/google";
-import Education from "./components/about/education";
 import Skills from "./components/about/skills";
 import { Toaster } from "sonner";
 import WorkExperience from "./components/workExperience";
@@ -90,9 +89,6 @@ const About = () => {
 
       {/* SKILLS */}
       <Skills />
-
-      {/* EDUCATION */}
-      <Education />
 
       {/* WORK */}
       <WorkExperience />
