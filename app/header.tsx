@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "duration-400 flex h-[5.5rem] w-full items-center justify-between border-gray-400 px-5 uppercase transition-colors md:border-b-2",
+        "duration-400 flex h-[5.5rem] w-full items-center justify-between border-gray-300 px-5 uppercase transition-colors md:border-b",
       )}
     >
       <Link href="/" className={cn("font-extrabold", greyQo.className)}>
