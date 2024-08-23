@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       {/* copyright here */}
-      <div className="mx-auto mt-8 max-w-2xl border-t border-300 p-4 text-center">
+      <div className="mx-auto max-w-2xl border-t border-300 p-4 text-center">
         <p className="text-base">
           &copy; {new Date().getFullYear()} Cornelius Motanya. All Rights
           Reserved.
