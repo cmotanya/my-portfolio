@@ -99,7 +99,7 @@ const Testimonial = () => {
               >
                 <div
                   className={cn(
-                    "relative mx-auto mt-10 flex w-full transform flex-col items-center gap-1 rounded-md border-2 border-primary bg-white p-3 pt-[2.5rem] shadow-xl",
+                    "relative mx-auto mt-10 flex w-full transform flex-col items-center gap-1 rounded-md border-2 border-secondary bg-white p-3 pt-[2.5rem] shadow-xl",
                     offset === 0 ? "z-10 scale-100" : "z-0 scale-90 blur-sm",
                   )}
                 >
