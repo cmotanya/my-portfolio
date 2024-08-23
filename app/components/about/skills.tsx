@@ -29,7 +29,7 @@ const Skills = () => {
         Skills
       </h2>
 
-      <div className="grid grid-cols-1 justify-center gap-8 md:grid-cols-2 lg:grid-cols-3 mx-3 md:mx-5">
+      <div className="mx-3 grid grid-cols-1 justify-center gap-8 md:mx-5 md:grid-cols-2 lg:grid-cols-3">
         {SkillContents.map((skill, index) => (
           <SkillItem key={index} {...skill} />
         ))}
@@ -49,16 +49,26 @@ interface SkillType {
 const SkillItem = ({ name, icon, description, kpi }: SkillType) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 0, 0, 0.15)" }}
+      whileHover={{
+        scale: 1.05,
+        boxShadow: "0 0 20px rgba(0, 0, 0, 0.15)",
+        rotateY: 10,
+        background: "linearGradient(145deg, #f3f3f3, #ffffff)",
+      }}
       transition={{ duration: 0.2, type: "spring", stiffness: 300 }}
-      className="flex flex-col items-center rounded-lg p-4"
+      className="relative flex flex-col items-center overflow-hidden rounded-lg p-4"
       style={{
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
     >
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-transparent to-fuchsia-300/20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      />
       <Image src={icon} alt="icon" width={50} height={50} className="mb-2" />
       <h3 className="mb-1 font-semibold">{name}</h3>
-      <p className="font-bold text-secondary">{kpi}</p>
+      <p className="font-bold text-primary">{kpi}</p>
       <p className="text-balance text-center text-sm text-600">{description}</p>
     </motion.div>
   );
