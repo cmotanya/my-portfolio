@@ -48,7 +48,7 @@ const ProjectShowcase = () => {
                 ease: "easeInOut",
                 delay: index * 0.05,
               }}
-              className="rounded-lg border border-200 bg-white p-4 shadow-md transition-all duration-300 hover:scale-105"
+              className="rounded-lg border border-200 bg-100 p-4 shadow-md transition-all duration-300 hover:shadow-xl"
             >
               <div className="flex items-start gap-3">
                 {/* icons in the first row */}
