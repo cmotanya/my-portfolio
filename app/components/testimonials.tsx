@@ -66,7 +66,7 @@ const Testimonial = () => {
   return (
     <div
       ref={carouselRef}
-      className="relative mb-8 w-full md:mt-10 md:max-w-3xl"
+      className="relative py-8 w-full md:mt-10 md:max-w-3xl"
     >
       <h3 className="mb-6 mt-4 text-2xl font-semibold md:mb-10">
         What Our Clients Say
