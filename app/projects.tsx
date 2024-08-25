@@ -1,6 +1,6 @@
 import React from "react";
 import Testimonials from "./components/testimonials";
-import ProjectShowcase from "./components/about/education";
+import ProjectShowcase from "./components/about/project-showcase";
 import { InView } from "./components/in-view";
 
 const Projects = () => {
