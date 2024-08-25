@@ -93,7 +93,9 @@ const ProjectShowcase = () => {
                         !project.client.includes("Hotel") && (
                           <IconBuilding size={14} className="mr-1 text-400" />
                         )}
-                      <span>{project.client}</span>
+                      <span className="rounded bg-secondary p-1">
+                        {project.client}
+                      </span>
                     </div>
                   </div>
                 </div>
