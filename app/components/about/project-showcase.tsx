@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, transform } from "framer-motion";
 import {
   IconCamera,
   IconWifi,
@@ -23,13 +23,15 @@ const ProjectShowcase = () => {
   };
 
   const toggleShowMore = () => {
-    setVisibleProjects(showMore ? 6 : projects.length);
-    setShowMore(!showMore);
+    setTimeout(() => {
+      setVisibleProjects(showMore ? 6 : projects.length);
+      setShowMore(!showMore);
+    }, 500);
   };
 
   return (
     <div className="mx-auto max-w-4xl">
-      <h2 className="mb-6 text-center text-2xl font-semibold">
+      <h2 className="mb-3 text-center text-2xl font-semibold md:mb-6">
         Recent Project
       </h2>
 
@@ -102,12 +104,12 @@ const ProjectShowcase = () => {
       </div>
 
       {projects.length >= visibleProjects && (
-        <div className="mt-8 text-center">
+        <div className="mt-4 text-center md:mt-8">
           <motion.button
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
-            className="rounded-full bg-primary px-4 py-3 text-white transition"
+            className="w-full rounded-full bg-primary px-4 py-3 text-white transition md:max-w-fit"
             onClick={toggleShowMore}
           >
             {showMore ? "Show Less" : "Show More"}{" "}
