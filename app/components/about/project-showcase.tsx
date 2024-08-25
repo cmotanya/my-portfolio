@@ -6,19 +6,27 @@ import {
   IconCamera,
   IconWifi,
   IconDeviceLaptop,
-  IconBuildingCommunity,
   IconBuildingSkyscraper,
   IconSchool,
   IconBuilding,
   IconCalendar,
-  IconChevronDown,
-  IconChevronUp,
-  IconNetwork,
 } from "@tabler/icons-react";
 import { projects } from "@/app/lib/projects";
 
 const ProjectShowcase = () => {
-  const [visibleProjects, _] = useState(6);
+  const [visibleProjects, setVisibleProjects] = useState(6);
+  const [showMore, setShowMore] = useState(false);
+
+  const buttonVariants = {
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
+    tap: { scale: 0.95, transition: { duration: 0.3 } },
+  };
+
+  const toggleShowMore = () => {
+    setVisibleProjects(showMore ? 6 : projects.length);
+    setShowMore(!showMore);
+  };
+
   return (
     <div className="mx-auto max-w-4xl">
       <h2 className="mb-6 text-center text-2xl font-semibold">
@@ -92,6 +100,20 @@ const ProjectShowcase = () => {
           ))}
         </AnimatePresence>
       </div>
+
+      {projects.length >= visibleProjects && (
+        <div className="mt-8 text-center">
+          <motion.button
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+            className="rounded-full bg-primary px-4 py-3 text-white transition"
+            onClick={toggleShowMore}
+          >
+            {showMore ? "Show Less" : "Show More"}{" "}
+          </motion.button>
+        </div>
+      )}
     </div>
   );
 };

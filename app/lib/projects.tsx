@@ -66,7 +66,7 @@ export const projects = [
   {
     title: "Restaurant CCTV and Wi-Fi Solution",
     date: "April 2024",
-    client: "Taste of Italy Restaurant",
+    client: "Taste of Italy Café",
     description:
       "Installed 6 CCTV cameras and configured separate VLANs for staff and guest Wi-Fi.",
     type: "both",
