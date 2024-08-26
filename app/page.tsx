@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 import "./globals.css";
 import CachedContent from "./components/cached-content";
-import Loader from "./loaderUI";
+import LoaderUI from "./loaderUI";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,15 +29,17 @@ export default function Home() {
     } else {
       setIsContentCached(false);
     }
-    /* simulate loading time if content is not cached */
-    setIsLoading(false);
 
-    /* enable scrolling after data is fetched */
-    document.body.style.overflow = "auto";
-  }, [isCachedContent]);
+    /* simulate loading time if content is not cached */
+    setTimeout(() => {
+      setIsLoading(false);
+      /* enable scrolling after data is fetched */
+      document.body.style.overflow = "auto";
+    }, 500); // Simulating a 2-second loading time
+  }, []);
 
   return isLoading ? (
-    <Loader />
+    <LoaderUI />
   ) : isContentCached ? (
     <CachedContent
       cachedContent={{

@@ -10,7 +10,7 @@ export const projects = [
   {
     title: "Small Business Wi-Fi Configuration",
     date: "August 2023",
-    client: "Local Café",
+    client: "Local Hotel",
     description:
       "Configured router and access points for optimal Wi-Fi coverage throughout the café.",
     type: "network",

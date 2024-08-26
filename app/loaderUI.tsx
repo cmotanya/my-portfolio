@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { InView } from "./components/in-view";
-import Header from "./header";
 import HeaderUI from "./header/headerUI";
-const Intro = () => {
+
+const LoaderUI = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,56 +29,96 @@ const Intro = () => {
     },
   };
 
+  const shimmerEffect = {
+    hidden: { backgroundPosition: "200% 0" },
+    visible: {
+      backgroundPosition: "-200% 0",
+      transition: {
+        repeat: Infinity,
+        duration: 1.5,
+        ease: "linear",
+      },
+    },
+  };
+
   return (
-    <section className="relative min-h-screen">
+    <section className="relative min-h-screen bg-gray-50">
+      {/* HeaderUI simulating the nav elements */}
       <HeaderUI />
 
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
+      <InView
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 30,
+            scale: 0.95,
+            filter: "blur(4px)",
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+          },
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        viewOptions={{ margin: "0px 0px -350px 0px" }}
       >
-        <motion.div variants={itemVariants} className="mb-8">
-          <motion.div className="relative rounded-full shadow-lg ring-4 ring-300 ring-offset-4 ring-offset-white">
-            <Image
-              src=""
-              alt=""
-              width={170}
-              height={170}
-              className="rounded-[9999px] bg-400"
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
+        >
+          <motion.div variants={itemVariants} className="mb-8">
+            <motion.div
+              variants={shimmerEffect}
+              className="relative h-[170px] w-[170px] rounded-full bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%] shadow-lg"
+            />
+          </motion.div>
+
+          <motion.div
+            variants={shimmerEffect}
+            initial="hidden"
+            animate="visible"
+            className="w-full max-w-2xl space-y-4 text-center"
+          >
+            <motion.div
+              variants={itemVariants}
+              className="mx-auto h-10 w-3/4 rounded-lg bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%]"
+            />
+
+            <motion.div
+              variants={itemVariants}
+              className="mx-auto h-6 w-full rounded-lg bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%]"
+            />
+            <motion.div
+              variants={itemVariants}
+              className="mx-auto h-6 w-5/6 rounded-lg bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%]"
+            />
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 flex w-full flex-col justify-center gap-4 md:flex-row"
+          >
+            <motion.div
+              className="h-12 w-full rounded-full bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%] md:w-40"
+              initial="hidden"
+              animate="visible"
+              variants={shimmerEffect}
+            />
+            <motion.div
+              className="h-12 w-full rounded-full bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%] md:w-40"
+              initial="hidden"
+              animate="visible"
+              variants={shimmerEffect}
             />
           </motion.div>
         </motion.div>
-
-        <motion.div className="w-full space-y-2">
-          {/* Heading */}
-          <motion.h1
-            variants={itemVariants}
-            className="mx-auto mb-8 w-[60%] rounded bg-400 p-6"
-          ></motion.h1>
-
-          {/* text */}
-          <motion.p
-            variants={itemVariants}
-            className="mx-auto w-full rounded bg-300 p-3 md:w-[50%]"
-          ></motion.p>
-          <motion.p
-            variants={itemVariants}
-            className="mx-auto w-full rounded bg-300 p-3 md:w-[50%]"
-          ></motion.p>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="mt-8 flex w-full flex-col justify-center gap-4 md:flex-row"
-        >
-          <span className="w-full rounded-full bg-400 py-7 md:w-[20%]"></span>
-          <span className="w-full rounded-full bg-400 py-7 md:w-[20%]"></span>
-        </motion.div>
-      </motion.div>
+      </InView>
     </section>
   );
 };
 
-export default Intro;
+export default LoaderUI;

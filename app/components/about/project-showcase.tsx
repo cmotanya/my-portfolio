@@ -10,6 +10,7 @@ import {
   IconSchool,
   IconBuilding,
   IconCalendar,
+  IconBuildingCommunity,
 } from "@tabler/icons-react";
 import { projects } from "@/app/lib/projects";
 
@@ -77,7 +78,10 @@ const ProjectShowcase = () => {
                     </div>
                     <div className="flex items-center">
                       {project.client.includes("Apartment") && (
-                        <IconBuilding size={14} className="mr-1 text-400" />
+                        <IconBuildingCommunity
+                          size={14}
+                          className="mr-1 text-400"
+                        />
                       )}
                       {project.client.includes("School") && (
                         <IconSchool size={14} className="mr-1 text-400" />
