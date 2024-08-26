@@ -15,7 +15,8 @@ import LoaderUI from "./loaderUI";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isContentCached, setIsContentCached] = useState(false);
-  const [isCachedContent, setCachedContent] = useState({});
+  const [cachedContent, setCachedContent] = useState({});
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
     /* disable scrolling */
@@ -30,12 +31,33 @@ export default function Home() {
       setIsContentCached(false);
     }
 
-    /* simulate loading time if content is not cached */
-    setTimeout(() => {
-      setIsLoading(false);
-      /* enable scrolling after data is fetched */
+    const loadContent = async () => {
+      // Simulate content loading (replace with actual data fetching if needed)
+      // await new Promise((resolve) => setTimeout(resolve,));
+
+      // Check if it's the first load
+      const firstLoadKey = "motanya-first-load";
+      const isFirstLoad = !localStorage.getItem(firstLoadKey);
+
+      if (isFirstLoad) {
+        // If it's the first load, set a minimum display time for the loader
+        setTimeout(() => {
+          setIsLoading(false);
+          document.body.style.overflow = "auto";
+          localStorage.setItem(firstLoadKey, "false");
+        }, 2000); // 2 seconds minimum display time
+      } else {
+        // If it's not the first load, finish loading immediately
+        setIsLoading(false);
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    loadContent();
+
+    return () => {
       document.body.style.overflow = "auto";
-    }, 500); // Simulating a 2-second loading time
+    };
   }, []);
 
   return isLoading ? (
