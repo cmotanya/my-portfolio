@@ -79,7 +79,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
           type={type}
           id={name}
           placeholder={placeholder}
-          className="block w-full rounded-full border border-accent py-3 pl-10 pr-4 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+          className="block w-full rounded-md border border-accent py-3 pl-10 pr-4 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
         />
       </div>
       {errors[name] && (
@@ -100,7 +100,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
         <div className="overflow-hidden">
           <div className="px-2 py-4 md:py-8">
             <h3 className="mb-6 text-xl font-medium text-gray-900">
-              Send us a message
+              Send us a direct message
             </h3>
             {!isSubmitSuccessful && (
               <form onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -148,7 +148,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex ml-auto w-full items-center justify-center rounded-full border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-blue-400 md:w-fit"
+                    className="ml-auto flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-blue-400 md:w-fit"
                   >
                     {isSubmitting ? (
                       <svg
