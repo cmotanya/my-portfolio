@@ -68,7 +68,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
         {placeholder}
       </label>
       <div className="group relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-4">
+        <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-3">
           <Icon
             className="h-5 w-5 text-400 transition-colors group-focus-within:text-700"
             stroke={1.5}
@@ -79,7 +79,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
           type={type}
           id={name}
           placeholder={placeholder}
-          className="block w-full rounded-md border-2 border-secondary py-3 pl-10 pr-4 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+          className="block w-full rounded border-2 border-secondary py-3 pl-10 pr-3 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
         />
       </div>
       {errors[name] && (
@@ -134,7 +134,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                     {...register("textarea")}
                     id="textarea"
                     rows={4}
-                    className="block w-full rounded-md border-2 border-secondary px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:outline-none focus:ring-secondary"
+                    className="block w-full rounded border-2 border-secondary px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:outline-none focus:ring-secondary"
                     placeholder="Enter your message..."
                   />
                   {errors.textarea && (
@@ -148,7 +148,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="ml-auto flex w-full items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-blue-400 md:w-fit"
+                    className="ml-auto flex w-full items-center justify-center rounded-full border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-blue-400 md:w-fit"
                   >
                     {isSubmitting ? (
                       <svg
