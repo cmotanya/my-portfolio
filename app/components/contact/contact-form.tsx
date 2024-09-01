@@ -92,7 +92,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
 
   return (
     <div className="mx-auto max-w-full">
-      <h2 className="mb-4 pt-4 text-center text-3xl font-medium">
+      <h2 className="mb-4 pt-4 text-3xl font-medium md:text-center">
         Send Us A Message
       </h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
