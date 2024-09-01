@@ -98,7 +98,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Contact Form */}
         <div className="overflow-hidden">
-          <div className="px-2 py-8">
+          <div className="px-2 py-4 md:py-8">
             <h3 className="mb-6 text-xl font-medium text-gray-900">
               Send us a message
             </h3>
