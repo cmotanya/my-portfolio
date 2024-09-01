@@ -79,7 +79,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
           type={type}
           id={name}
           placeholder={placeholder}
-          className="block w-full rounded-md border border-accent py-3 pl-10 pr-4 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+          className="block w-full rounded-md border-2 border-secondary py-3 pl-10 pr-4 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
         />
       </div>
       {errors[name] && (
@@ -134,7 +134,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                     {...register("textarea")}
                     id="textarea"
                     rows={4}
-                    className="block w-full rounded-md border border-accent px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:outline-none focus:ring-secondary"
+                    className="block w-full rounded-md border-2 border-secondary px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:outline-none focus:ring-secondary"
                     placeholder="Enter your message..."
                   />
                   {errors.textarea && (
