@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { InView } from "./components/in-view";
+import DownloadResume from "./components/about/downloadResume";
 const Intro = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,21 +97,13 @@ const Intro = () => {
 
           <motion.div
             variants={itemVariants}
-            className="mt-8 flex w-full flex-col justify-center gap-4 md:flex-row"
+            className="relative mt-8 flex w-full flex-col justify-center gap-4 text-center md:flex-row"
           >
-            <a
-              href="#contact"
-              className="w-full rounded-full bg-primary px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700 md:w-fit"
-            >
-              Get in Touch
-            </a>
-            <a
-              href="/resume.pdf"
-              download="resume.pdf"
-              className="w-full rounded-full border border-400 px-8 py-3 text-center font-semibold transition-colors md:w-fit"
-            >
-              Download Resume
-            </a>
+            <button className="w-full rounded-full bg-primary px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700 md:w-fit">
+              <a href="#contact">Get in Touch</a>
+            </button>
+
+            <DownloadResume />
           </motion.div>
         </motion.div>
       </InView>

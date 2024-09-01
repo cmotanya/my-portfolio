@@ -22,9 +22,9 @@
     --custom-900: #111827;
     --custom-950: #030712;
 
-    --primary: #db2b41;
-    --secondary: #ece090;
-    --accent: #cbe45f;
+    --primary: #1d48f7;
+    --secondary: #fade6c;
+    --accent: #72f83f;
 
     --width: min(80ch, calc(100% - 0.5rem));
   }
@@ -56,32 +56,6 @@
 }
 
 @layer utilities {
-  /* @layer components {
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    textarea:-webkit-autofill,
-    textarea:-webkit-autofill:focus,
-    select:-webkit-autofill,
-    select:-webkit-autofill:hover {
-      border: 2px solid #475569;
-      font-size: 1.125rem;
-      -webkit-text-fill-color: #cbd5e1;
-      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-      transition: background-color 5000s ease-in-out 0s;
-      caret-color: #0f172a;
-    }
-
-    input:-webkit-autofill:focus,
-    textarea:-webkit-autofill:hover,
-    select:-webkit-autofill:focus {
-      border: 2px solid #475569;
-      font-size: 1.125rem;
-      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-      -webkit-text-fill-color: #cbd5e1;
-      transition: background-color 5000s ease-in-out 0s;
-      caret-color: #0f172a;
-    } */
-
   @layer components {
     input:-webkit-autofill,
     input:-webkit-autofill:hover,

@@ -1,6 +1,6 @@
 import { IconCloudDownload } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { toast } from "sonner";
 
 const DownloadResume = () => {
@@ -39,12 +39,12 @@ const DownloadResume = () => {
       initial="hidden"
       animate="visible"
       aria-label="Download Resume"
-      className="mt-8"
+      className=""
     >
       <button
         onClick={handleDownload}
         disabled={isDownloading}
-        className="flex w-full transform items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-white shadow transition-all active:scale-105 md:w-fit"
+        className="flex w-full transform items-center justify-center gap-2 rounded-full border border-secondary px-4 py-3 font-medium text-800 shadow-md transition-all active:scale-105 md:w-fit"
       >
         {isDownloading ? (
           <>
