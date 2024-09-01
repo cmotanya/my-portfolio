@@ -3,7 +3,7 @@ import { IconClock, IconMapPin, IconPhone } from "@tabler/icons-react";
 const ContactInformation = () => {
   return (
     <div>
-      <div className="px-6 pt-4 md:py-8">
+      <div className="md:px-6 md:py-8">
         <h3 className="mb-6 text-xl font-medium">Contact Information</h3>
         <div className="space-y-6">
           <div className="flex items-start">
