@@ -68,7 +68,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
         {placeholder}
       </label>
       <div className="group relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-4">
           <Icon
             className="h-5 w-5 text-400 transition-colors group-focus-within:text-700"
             stroke={1.5}
@@ -79,7 +79,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
           type={type}
           id={name}
           placeholder={placeholder}
-          className="block w-full rounded-md border border-accent py-2 pl-10 pr-3 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+          className="block w-full rounded-full border border-accent py-3 pl-10 pr-4 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
         />
       </div>
       {errors[name] && (
@@ -134,7 +134,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                     {...register("textarea")}
                     id="textarea"
                     rows={4}
-                    className="block w-full rounded-md border border-accent bg-white px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:outline-none focus:ring-secondary"
+                    className="block w-full rounded-md border border-accent px-3 py-2 text-sm leading-5 placeholder-gray-500 focus:outline-none focus:ring-secondary"
                     placeholder="Enter your message..."
                   />
                   {errors.textarea && (
