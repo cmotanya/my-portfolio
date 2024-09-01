@@ -7,6 +7,7 @@ import Skills from "./components/about/skills";
 import { Toaster } from "sonner";
 import WorkExperience from "./components/workExperience";
 import { InView } from "./components/in-view";
+import { cn } from "./utils/cn";
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
@@ -76,7 +77,9 @@ const About = () => {
           className="space-y-4"
         >
           <motion.div variants={textVariants} className="space-y-4">
-            <h1 className={neue.className}>About Me</h1>
+            <h1 className={cn("text-6xl font-bold uppercase", neue.className)}>
+              About Me
+            </h1>
             <p>
               Having a background in IT and love of learning new technologies, I
               realized that I can help people with their needs by writing code.

@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import "./globals.css";
 import CachedContent from "./components/cached-content";
 import LoaderUI from "./loaderUI";
+import Contact from "./contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -80,6 +81,7 @@ export default function Home() {
         <Intro />
         <About />
         <Projects />
+        <Contact />
       </main>
       <Footer />
     </>

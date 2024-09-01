@@ -5,7 +5,7 @@ import { InView } from "./components/in-view";
 
 const Projects = () => {
   return (
-    <section id="projects" className="mb-16">
+    <section id="projects">
       <InView
         variants={{
           hidden: {
