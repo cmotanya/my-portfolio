@@ -51,7 +51,7 @@ const About = () => {
   };
 
   return (
-    <section id="about-me" className="relative pt-16 md:pt-0">
+    <section id="about-me" className="relative pt-8 md:pt-0">
       <InView
         variants={{
           hidden: {

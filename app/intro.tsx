@@ -30,7 +30,7 @@ const Intro = () => {
   };
 
   return (
-    <section className="relative min-h-screen">
+    <section className="relative h-full md:h-screen md:pt-0">
       <InView
         variants={{
           hidden: {
