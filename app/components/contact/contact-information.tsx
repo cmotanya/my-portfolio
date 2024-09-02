@@ -47,10 +47,6 @@ const ContactInformation = () => {
             </div>
           </div>
         </div>
-        {/* You can add a map here if desired */}
-        <div className="mt-8 rounded-lg bg-accent p-4">
-          <p className="text-center text-gray-600">Map placeholder</p>
-        </div>
       </div>
     </div>
   );

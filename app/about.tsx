@@ -64,11 +64,8 @@ const About = () => {
           },
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        viewOptions={{ margin: "0px 0px -200px 0px" }}
+        viewOptions={{ margin: "0px 0px -100px 0px" }}
       >
-        <div className="absolute inset-0 whitespace-nowrap text-[10rem] font-bold text-gray-800/5">
-          ABOUT ME
-        </div>
         <motion.div
           initial="hidden"
           animate="visible"

@@ -93,14 +93,14 @@ function ContactPage({ accessKey }: { accessKey: string }) {
   return (
     <div className="mx-auto max-w-full">
       <h2 className="mb-4 pt-4 text-3xl font-medium md:text-center">
-        Send Us A Message
+        Send Me A Message
       </h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Contact Form */}
         <div className="overflow-hidden">
           <div className="px-2 py-4 md:py-8">
             <h3 className="mb-6 text-xl font-medium text-gray-900">
-              Send us a direct message
+              Send me a direct message
             </h3>
             {!isSubmitSuccessful && (
               <form onSubmit={handleSubmit(onSubmit)} noValidate>

@@ -47,7 +47,7 @@ const Intro = () => {
           },
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        viewOptions={{ margin: "0px 0px -350px 0px" }}
+        viewOptions={{ margin: "0px 0px -100px 0px" }}
       >
         <motion.div
           initial="hidden"
@@ -99,7 +99,7 @@ const Intro = () => {
             variants={itemVariants}
             className="relative mt-8 flex w-full flex-col justify-center gap-4 text-center md:flex-row"
           >
-            <button className="w-full rounded-full bg-primary px-8 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700 md:w-fit">
+            <button className="w-full rounded-full bg-primary px-8 py-3 text-center font-medium text-white transition-colors hover:bg-indigo-700 md:w-fit">
               <a href="#contact">Get in Touch</a>
             </button>
 

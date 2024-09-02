@@ -29,7 +29,7 @@ const Projects = () => {
           },
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        viewOptions={{ margin: "0px 0px -350px 0px" }}
+        viewOptions={{ margin: "0px 0px -100px 0px" }}
       >
         <h1 className={cn("text-6xl uppercase mb-8", neue.className)}>Projects</h1>
 

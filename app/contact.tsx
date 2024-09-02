@@ -1,6 +1,7 @@
 import ContactForm from "./components/contact/contact-form";
 import { Bebas_Neue } from "next/font/google";
 import { cn } from "./utils/cn";
+import { InView } from "./components/in-view";
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
@@ -10,15 +11,34 @@ const neue = Bebas_Neue({
 const Contact = () => {
   const accessKey = "2e3adbbc-1bf9-439a-b88a-d85e13ac63fe";
   return (
-    <div id="contact" className="mb-12">
-      <h1 className={cn("text-6xl font-bold uppercase", neue.className)}>
-        Contact
-      </h1>
+    <section id="contact" className="mb-12">
+      <InView
+        variants={{
+          hidden: {
+            opacity: 0,
+            x: 30,
+            scale: 0.90,
+            filter: "blur(4px)",
+          },
+          visible: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            filter: "blur(0px)",
+          },
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        viewOptions={{ margin: "0px 0px -100px 0px" }}
+      >
+        <h1 className={cn("text-6xl font-bold uppercase", neue.className)}>
+          Contact
+        </h1>
 
-      <div>
-        <ContactForm accessKey={accessKey} />
-      </div>
-    </div>
+        <div>
+          <ContactForm accessKey={accessKey} />
+        </div>
+      </InView>
+    </section>
   );
 };
 
