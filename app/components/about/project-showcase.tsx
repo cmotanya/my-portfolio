@@ -13,6 +13,13 @@ import {
   IconBuildingCommunity,
 } from "@tabler/icons-react";
 import { projects } from "@/app/lib/projects";
+import { Bebas_Neue } from "next/font/google";
+import { cn } from "@/app/utils/cn";
+
+const neue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const ProjectShowcase = () => {
   const [visibleProjects, setVisibleProjects] = useState(6);
@@ -32,7 +39,12 @@ const ProjectShowcase = () => {
 
   return (
     <div className="mx-auto max-w-4xl">
-      <h2 className="mb-3 text-center text-2xl font-semibold md:mb-6">
+      <h2
+        className={cn(
+          "mb-3 text-3xl font-medium uppercase md:mb-6 md:text-center",
+          neue.className,
+        )}
+      >
         Recent Project
       </h2>
 

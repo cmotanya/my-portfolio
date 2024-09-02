@@ -18,11 +18,11 @@ const Skills = () => {
         y: 0,
       }}
       transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-      className="my-8"
+      className="mb-8 mt-12"
     >
       <h2
         className={cn(
-          "mb-4 text-center text-3xl font-semibold",
+          "mb-4 text-3xl font-medium md:text-center",
           neue.className,
         )}
       >

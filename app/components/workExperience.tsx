@@ -1,11 +1,22 @@
 import React from "react";
 import { workExperience } from "../lib/workExperience";
 import { cn } from "../utils/cn";
+import { Bebas_Neue } from "next/font/google";
+
+const neue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const WorkExperience = () => {
   return (
     <div className="mb-16 space-y-4 pt-8 md:pt-12">
-      <h3 className="mb-12 text-3xl font-semibold capitalize">
+      <h3
+        className={cn(
+          "mb-6 text-3xl font-medium capitalize md:text-center",
+          neue.className,
+        )}
+      >
         work experience
       </h3>
 

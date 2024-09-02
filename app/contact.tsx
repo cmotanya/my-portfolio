@@ -17,7 +17,7 @@ const Contact = () => {
           hidden: {
             opacity: 0,
             x: 30,
-            scale: 0.90,
+            scale: 0.9,
             filter: "blur(4px)",
           },
           visible: {
@@ -33,6 +33,14 @@ const Contact = () => {
         <h1 className={cn("text-6xl font-bold uppercase", neue.className)}>
           Contact
         </h1>
+        <h2
+          className={cn(
+            "mb-4 pt-4 text-3xl font-medium md:text-center",
+            neue.className,
+          )}
+        >
+          Send Me A Message
+        </h2>
 
         <div>
           <ContactForm accessKey={accessKey} />

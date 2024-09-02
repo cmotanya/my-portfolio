@@ -6,6 +6,12 @@ import { IntroSection } from "../lib/introSection";
 import { testimonials } from "../lib/testimonials";
 import Image from "next/image";
 import { cn } from "../utils/cn";
+import { Bebas_Neue } from "next/font/google";
+
+const neue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -65,8 +71,13 @@ const Testimonial = () => {
 
   return (
     <div ref={carouselRef} className="relative w-full md:mt-10 md:max-w-3xl">
-      <h3 className="mb-6 mt-12 text-2xl font-semibold md:mb-10">
-        What Our Clients Say
+      <h3
+        className={cn(
+          "mb-6 mt-12 text-3xl font-semibold md:mb-10",
+          neue.className,
+        )}
+      >
+        What My Clients Say
       </h3>
 
       <div className="relative h-[400px] w-full">

@@ -56,9 +56,7 @@ const DownloadResume = () => {
             <motion.span variants={textVariant}>
               <IconCloudDownload aria-hidden="true" />
             </motion.span>
-            <motion.span variants={textVariant} className="uppercase">
-              download resume
-            </motion.span>
+            <motion.span variants={textVariant}>Download Resume</motion.span>
           </>
         )}
       </button>
