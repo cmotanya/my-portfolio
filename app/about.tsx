@@ -96,7 +96,7 @@ const About = () => {
             variants={buttonVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-full rounded-full bg-secondary px-8 py-3 text-base font-semibold uppercase text-black md:w-fit"
+            className="w-full rounded-full bg-secondary px-8 py-3 font-semibold uppercase text-black md:w-fit"
           >
             Hire Me
           </motion.button>
