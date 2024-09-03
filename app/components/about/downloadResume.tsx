@@ -19,12 +19,16 @@ const DownloadResume = () => {
       setIsDownloading(false);
       try {
         const link = document.createElement("a");
-        link.href = `https://drive.google.com/uc?export=download&id=${fileID}`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        if (fileID === undefined) {
+          throw new Error("File ID not found");
+        } else {
+          link.href = `https://drive.google.com/uc?export=download&id=${fileID}`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
 
-        toast.success("Resume downloaded!");
+          toast.success("Resume downloaded!");
+        }
       } catch (error) {
         console.error("Download failed:", error);
         toast.error("Failed to download resume.");
@@ -32,7 +36,7 @@ const DownloadResume = () => {
         setIsDownloading(false);
       }
     }, 3000);
-  }, []);
+  }, [fileID]);
 
   return (
     <motion.div
