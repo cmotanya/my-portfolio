@@ -55,41 +55,6 @@ function ContactPage({ accessKey }: { accessKey: string }) {
     }
   };
 
-  type TInputField = {
-    name: keyof TSendEmailSchema;
-    type: string;
-    placeholder: string;
-    icon: React.ElementType;
-  };
-
-  const InputField = ({ name, type, placeholder, icon: Icon }: TInputField) => (
-    <div className="mb-4">
-      <label htmlFor={name} className="mb-1 block text-sm font-medium text-800">
-        {placeholder}
-      </label>
-      <div className="group relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-3">
-          <Icon
-            className="h-5 w-5 text-400 transition-colors group-focus-within:text-700"
-            stroke={1.5}
-          />
-        </div>
-        <input
-          {...register(name)}
-          type={type}
-          id={name}
-          placeholder={placeholder}
-          className="block w-full rounded border-2 border-secondary py-3 pl-10 pr-3 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
-        />
-      </div>
-      {errors[name] && (
-        <p className="mt-1 text-sm text-red-600 dark:text-red-500">
-          {errors[name].message}
-        </p>
-      )}
-    </div>
-  );
-
   return (
     <div className="mx-auto max-w-full">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -101,25 +66,97 @@ function ContactPage({ accessKey }: { accessKey: string }) {
             </h3>
             {!isSubmitSuccessful && (
               <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                <InputField
-                  name="name"
-                  type="text"
-                  placeholder="Your Name"
-                  icon={IconUser}
-                />
-                <InputField
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  icon={IconMail}
-                />
-                <InputField
-                  name="mobile"
-                  type="tel"
-                  placeholder="Your Phone"
-                  icon={IconPhone}
-                />
+                {/* Name */}
+                <div className="mb-4">
+                  <label
+                    htmlFor={"name"}
+                    className="mb-1 block text-sm font-medium text-800"
+                  >
+                    {"name"}
+                  </label>
+                  <div className="group relative">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-3">
+                      <IconUser
+                        className="h-5 w-5 text-400 transition-colors group-focus-within:text-700"
+                        stroke={1.5}
+                      />
+                    </div>
+                    <input
+                      {...register("name")}
+                      type={"name"}
+                      id={"name"}
+                      placeholder={"Your Name"}
+                      className="block w-full rounded border-2 border-secondary py-3 pl-10 pr-3 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+                    />
+                  </div>
+                  {errors["name"] && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                      {errors["name"].message}
+                    </p>
+                  )}
+                </div>
 
+                {/* Email */}
+                <div className="mb-4">
+                  <label
+                    htmlFor={"email"}
+                    className="mb-1 block text-sm font-medium text-800"
+                  >
+                    {"Your Email"}
+                  </label>
+                  <div className="group relative">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-3">
+                      <IconMail
+                        className="h-5 w-5 text-400 transition-colors group-focus-within:text-700"
+                        stroke={1.5}
+                      />
+                    </div>
+                    <input
+                      {...register("email")}
+                      type={"email"}
+                      id={"email"}
+                      placeholder={"Your Email"}
+                      className="block w-full rounded border-2 border-secondary py-3 pl-10 pr-3 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+                    />
+                  </div>
+                  {errors["email"] && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                      {errors["email"].message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Mobile */}
+                <div className="mb-4">
+                  <label
+                    htmlFor={"mobile"}
+                    className="mb-1 block text-sm font-medium text-800"
+                  >
+                    {"Your Phone"}
+                  </label>
+                  <div className="group relative">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-3">
+                      <IconPhone
+                        className="h-5 w-5 text-400 transition-colors group-focus-within:text-700"
+                        stroke={1.5}
+                      />
+                    </div>
+                    <input
+                      {...register("mobile")}
+                      type={"tel"}
+                      id={"mobile"}
+                      placeholder={"Your Phone"}
+                      className="block w-full rounded border-2 border-secondary py-3 pl-10 pr-3 text-sm leading-5 placeholder-500 transition-all focus:border-secondary focus:shadow-md focus:outline-none"
+                    />
+                  </div>
+                  {errors["mobile"] && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-500">
+                      {errors["mobile"].message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Textarea */}
                 <div className="mb-4">
                   <label
                     htmlFor="textarea"
@@ -141,12 +178,14 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                   )}
                 </div>
 
+                {/* Submit Button */}
                 <div className="mt-3">
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="ml-auto flex w-full items-center justify-center rounded-full border border-transparent bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-blue-400 md:w-fit"
                   >
+                    {/* If is submitting */}
                     {isSubmitting ? (
                       <svg
                         className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
@@ -177,6 +216,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
               </form>
             )}
 
+            {/* If submit is successful */}
             {isSubmitSuccessful && isSuccess && (
               <div className="text-center">
                 <IconCheck
@@ -200,6 +240,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
               </div>
             )}
 
+            {/* If submit is not successful */}
             {isSubmitSuccessful && !isSuccess && (
               <div className="text-center">
                 <IconX
