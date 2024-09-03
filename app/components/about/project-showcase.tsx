@@ -127,7 +127,7 @@ const ProjectShowcase = () => {
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
-            className="w-full rounded-full bg-primary px-4 py-3 text-white transition md:max-w-fit"
+            className="w-full rounded-full bg-primary px-4 py-3 text-base text-white transition md:max-w-fit"
             onClick={toggleShowMore}
           >
             {showMore ? "Show Less" : "Show More"}{" "}
