@@ -9,7 +9,8 @@ const neue = Bebas_Neue({
 });
 
 const Contact = () => {
-  const accessKey = "2e3adbbc-1bf9-439a-b88a-d85e13ac63fe";
+  const accessKey = process.env.NEXT_PUBLIC_ACCESS_KEY;
+
   return (
     <section id="contact" className="mb-12">
       <InView
@@ -42,9 +43,7 @@ const Contact = () => {
           Send Me A Message
         </h2>
 
-        <div>
-          <ContactForm accessKey={accessKey} />
-        </div>
+        <div>{accessKey && <ContactForm accessKey={accessKey} />}</div>
       </InView>
     </section>
   );

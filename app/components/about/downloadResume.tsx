@@ -5,10 +5,11 @@ import { toast } from "sonner";
 
 const DownloadResume = () => {
   const [isDownloading, setIsDownloading] = useState(false);
+  const fileID = process.env.NEXT_PUBLIC_RESUME_FILE_ID;
 
   const textVariant = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, delay: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, delay: 0.4 } },
   };
 
   const handleDownload = useCallback(() => {
@@ -18,7 +19,6 @@ const DownloadResume = () => {
       setIsDownloading(false);
       try {
         const link = document.createElement("a");
-        const fileID = "18r8SaE40PmARQSv5kV42NAQaLsg-3R8B";
         link.href = `https://drive.google.com/uc?export=download&id=${fileID}`;
         document.body.appendChild(link);
         link.click();
