@@ -35,7 +35,7 @@ const DesktopHeader = () => {
                 href={item.href}
                 className={cn(
                   "relative px-6 py-2 text-lg font-medium transition-colors duration-200 ease-in-out",
-                  isActive ? "rounded bg-primary" : "hover:text-800",
+                  isActive ? "rounded bg-primary text-white" : "hover:text-800",
                 )}
                 onClick={() => setActiveItem(item.href)}
               >
