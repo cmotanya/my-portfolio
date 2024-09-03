@@ -97,9 +97,9 @@ const Intro = () => {
 
           <motion.div
             variants={itemVariants}
-            className="relative mt-8 flex w-full flex-col justify-center gap-4 text-center md:flex-row"
+            className="relative mt-8 flex w-full flex-col justify-center gap-8 text-center md:flex-row"
           >
-            <button className="w-full rounded-full bg-primary px-8 py-3 text-center uppercase font-medium text-white transition-colors hover:bg-indigo-700 md:w-fit">
+            <button className="w-full rounded bg-primary px-8 py-3 text-center uppercase transition-colors font-medium hover:bg-indigo-600 md:w-fit">
               <a href="#contact">Get in Touch</a>
             </button>
 

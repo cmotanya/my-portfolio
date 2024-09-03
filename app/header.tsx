@@ -30,9 +30,9 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="duration-400 flex h-[5.5rem] w-full items-center justify-between border-gray-300 px-5 uppercase transition-colors md:border-b">
-      <Link href="/" className={cn("font-extrabold", greyQo.className)}>
-        Cornelius
+    <header className="duration-400 flex h-[5.5rem] w-full items-center justify-between border-300 px-5 uppercase transition-colors md:border-b">
+      <Link href="/" className="rounded bg-secondary p-2 font-medium">
+        0712909475
       </Link>
 
       <DesktopHeader />

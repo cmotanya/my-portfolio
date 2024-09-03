@@ -12,6 +12,8 @@ import "./globals.css";
 import CachedContent from "./components/cached-content";
 import LoaderUI from "./loaderUI";
 import Contact from "./contact";
+import TopArrowButton from "./arrow-up";
+import ToTopArrowButton from "./arrow-up";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -82,6 +84,7 @@ export default function Home() {
         <About />
         <Projects />
         <Contact />
+        <ToTopArrowButton />
       </main>
       <Footer />
     </>
