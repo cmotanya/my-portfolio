@@ -48,7 +48,7 @@ export default function Home() {
           setIsLoading(false);
           document.body.style.overflow = "auto";
           localStorage.setItem(firstLoadKey, "false");
-        }, 2000); // 2 seconds minimum display time
+        }, 5000); // 2 seconds minimum display time
       } else {
         // If it's not the first load, finish loading immediately
         setIsLoading(false);

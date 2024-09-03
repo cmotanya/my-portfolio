@@ -99,7 +99,7 @@ const Intro = () => {
             variants={itemVariants}
             className="relative mt-8 flex w-full flex-col justify-center gap-4 text-center md:flex-row md:gap-8"
           >
-            <button className="w-full rounded bg-primary px-8 py-3 text-center uppercase text-white transition-colors hover:bg-indigo-600 md:w-fit">
+            <button className="w-full rounded bg-primary px-8 py-3 text-center font-medium uppercase text-white transition-colors hover:bg-indigo-600 md:w-fit md:font-normal">
               <a href="#contact">Get in Touch</a>
             </button>
 
