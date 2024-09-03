@@ -72,7 +72,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
                     htmlFor={"name"}
                     className="mb-1 block text-sm font-medium text-800"
                   >
-                    {"name"}
+                    {"Your Name"}
                   </label>
                   <div className="group relative">
                     <div className="pointer-events-none absolute inset-y-0 left-0 top-1/2 -translate-y-1/2 pl-3">
