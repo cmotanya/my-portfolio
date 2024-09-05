@@ -137,7 +137,7 @@ const ProjectShowcase = () => {
             {showMore ? (
               "Show Less"
             ) : isLoading ? (
-              <span className="flex items-center gap-2">
+              <span className="flex items-center justify-center gap-2">
                 Showing <Ellipsis color="white" size={20} />
               </span>
             ) : (
