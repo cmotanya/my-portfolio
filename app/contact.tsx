@@ -17,13 +17,11 @@ const Contact = () => {
         variants={{
           hidden: {
             opacity: 0,
-            x: 30,
             scale: 0.9,
-            filter: "blur(4px)",
+            filter: "blur(5px)",
           },
           visible: {
             opacity: 1,
-            x: 0,
             scale: 1,
             filter: "blur(0px)",
           },
