@@ -1,6 +1,7 @@
-import { IconCloudDownload } from "@tabler/icons-react";
+import { IconCloudDownload, IconRings } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
+import { Ring } from "react-spinners-css";
 import { toast } from "sonner";
 
 const DownloadResume = () => {
@@ -22,12 +23,12 @@ const DownloadResume = () => {
         if (fileID === undefined) {
           throw new Error("File ID not found");
         } else {
+          toast.success("Resume downloaded!");
+
           link.href = `https://drive.google.com/uc?export=download&id=${fileID}`;
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-
-          toast.success("Resume downloaded!");
         }
       } catch (error) {
         console.error("Download failed:", error);
@@ -56,7 +57,7 @@ const DownloadResume = () => {
       >
         {isDownloading ? (
           <>
-            <Spinner />
+            <Ring size={20} color="#111827" aria-hidden="true" />
             <motion.span variants={textVariant}>Downloading...</motion.span>
           </>
         ) : (
@@ -71,28 +72,5 @@ const DownloadResume = () => {
     </motion.div>
   );
 };
-
-const Spinner = () => (
-  <svg
-    className="h-5 w-5 animate-spin text-black"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-  >
-    <circle
-      className="opacity-25"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
-    ></circle>
-    <path
-      className="opacity-75"
-      fill="currentColor"
-      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-    ></path>
-  </svg>
-);
 
 export default DownloadResume;

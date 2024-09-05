@@ -15,6 +15,7 @@ import {
 import { projects } from "@/app/lib/projects";
 import { Bebas_Neue } from "next/font/google";
 import { cn } from "@/app/utils/cn";
+import { Ellipsis } from "react-spinners-css";
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ const neue = Bebas_Neue({
 const ProjectShowcase = () => {
   const [visibleProjects, setVisibleProjects] = useState(6);
   const [showMore, setShowMore] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const buttonVariants = {
     hover: { scale: 1.05, transition: { duration: 0.3 } },
@@ -31,10 +33,12 @@ const ProjectShowcase = () => {
   };
 
   const toggleShowMore = () => {
+    setIsLoading(true);
     setTimeout(() => {
       setVisibleProjects(showMore ? 6 : projects.length);
       setShowMore(!showMore);
-    }, 500);
+      setIsLoading(false);
+    }, 1000);
   };
 
   return (
@@ -130,7 +134,15 @@ const ProjectShowcase = () => {
             className="w-full rounded bg-primary px-4 py-3 text-white transition md:max-w-fit"
             onClick={toggleShowMore}
           >
-            {showMore ? "Show Less" : "Show More"}{" "}
+            {showMore ? (
+              "Show Less"
+            ) : isLoading ? (
+              <span className="flex items-center gap-2">
+                Showing <Ellipsis color="white" size={20} />
+              </span>
+            ) : (
+              "Show More"
+            )}
           </motion.button>
         </div>
       )}
