@@ -63,7 +63,7 @@ const LoaderUI = () => {
           variants={shimmerEffect}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-2xl space-y-4 text-center"
+          className="w-full max-w-2xl space-y-6 text-center"
         >
           <motion.div
             variants={itemVariants}
@@ -82,7 +82,7 @@ const LoaderUI = () => {
 
         <motion.div
           variants={itemVariants}
-          className="mt-8 flex w-full flex-col justify-center gap-4 md:flex-row"
+          className="mt-16 flex w-full flex-col justify-center gap-4 md:flex-row"
         >
           <motion.div
             className="h-12 w-full rounded-full bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%] md:w-40"
