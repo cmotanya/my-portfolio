@@ -200,7 +200,10 @@ function ContactPage({ accessKey }: { accessKey: string }) {
             {/* If submit is successful */}
             {isSubmitSuccessful && isSuccess && (
               <div className="text-center">
-                <IconCheck className="mx-auto h-12 w-12" stroke={1.5} />
+                <IconCheck
+                  className="mx-auto h-12 w-12 text-green-600"
+                  stroke={1.5}
+                />
                 <h3 className="mt-2 text-xl font-medium text-gray-900 dark:text-white">
                   {message}
                 </h3>
