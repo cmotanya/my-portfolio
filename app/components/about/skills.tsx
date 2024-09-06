@@ -1,8 +1,10 @@
 import { SkillContents } from "@/app/lib/skills";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
 import { cn } from "@/app/utils/cn";
+import AnimatedNumber from "./animated-numbers";
+import { useRef, useState } from "react";
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
@@ -31,7 +33,7 @@ const Skills = () => {
 
       <div className="mx-3 grid grid-cols-1 justify-center gap-4 md:mx-5 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         {SkillContents.map((skill, index) => (
-          <SkillItem key={index} {...skill} />
+          <SkillItem key={index} {...skill} kpi={parseFloat(skill.kpi)} />
         ))}
       </div>
     </motion.div>
@@ -44,9 +46,17 @@ interface SkillType {
   name: string;
   icon: string;
   description: string;
-  kpi: string;
+  kpi: number;
 }
 const SkillItem = ({ name, icon, description, kpi }: SkillType) => {
+  const [value, setValue] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  if (isInView && value === 0) {
+    setValue(kpi);
+  }
+
   return (
     <motion.div
       whileHover={{
@@ -68,7 +78,12 @@ const SkillItem = ({ name, icon, description, kpi }: SkillType) => {
       />
       <Image src={icon} alt="icon" width={50} height={50} className="mb-2" />
       <h3 className="mb-1 font-semibold">{name}</h3>
-      <p className="font-bold text-primary">{kpi}</p>
+      <p className="font-bold text-primary" ref={ref}>
+        <AnimatedNumber
+          springOptions={{ stiffness: 300, bounce: 0.5, duration: kpi }}
+          value={kpi}
+        />
+      </p>
       <p className="text-balance text-center text-sm text-600">{description}</p>
     </motion.div>
   );
