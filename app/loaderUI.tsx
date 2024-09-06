@@ -52,13 +52,15 @@ const LoaderUI = () => {
         variants={containerVariants}
         className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
       >
-        <motion.div variants={itemVariants} className="mb-8">
+        {/* Image UI */}
+        <motion.div variants={itemVariants} className="my-8">
           <motion.div
             variants={shimmerEffect}
             className="relative h-[170px] w-[170px] rounded-full bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%] shadow-lg"
           />
         </motion.div>
 
+        {/* Text UI */}
         <motion.div
           variants={shimmerEffect}
           initial="hidden"
@@ -80,6 +82,7 @@ const LoaderUI = () => {
           />
         </motion.div>
 
+        {/* Buttons UI */}
         <motion.div
           variants={itemVariants}
           className="mt-20 flex w-full flex-col justify-center gap-4 md:flex-row"
