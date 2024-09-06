@@ -37,8 +37,13 @@ const Header = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
       >
-        <Link href='tel:+254712909475' className="rounded bg-secondary p-2 font-medium">
-          (+254)712 909 475
+        <Link
+          href="tel:+254712909475"
+          rel="noopener"
+          target="_blank"
+          className="rounded bg-secondary p-2 font-medium"
+        >
+          0712909475
         </Link>
       </motion.div>
 
