@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { IntroSection } from "../lib/introSection";
 import { Merienda } from "next/font/google";
-import { testimonials } from "../lib/testimonials";
 import Image from "next/image";
+import { IntroSection } from "@/app/lib/introSection";
+import { testimonials } from "@/app/lib/testimonials";
 
 const merienda = Merienda({ subsets: ["latin"] });
 
