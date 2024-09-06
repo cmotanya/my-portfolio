@@ -201,7 +201,7 @@ function ContactPage({ accessKey }: { accessKey: string }) {
             {isSubmitSuccessful && isSuccess && (
               <div className="text-center">
                 <IconCheck
-                  className="mx-auto h-12 w-12 text-green-500"
+                  className="mx-auto h-12 w-12 text-green-600"
                   stroke={1.5}
                 />
                 <h3 className="mt-2 text-xl font-medium text-gray-900 dark:text-white">
