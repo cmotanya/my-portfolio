@@ -67,7 +67,7 @@ const LoaderUI = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="mx-auto h-10 w-3/4 rounded-lg bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%]"
+            className="mx-auto mb-10 h-10 w-3/4 rounded-lg bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%]"
           />
 
           <motion.div
@@ -82,7 +82,7 @@ const LoaderUI = () => {
 
         <motion.div
           variants={itemVariants}
-          className="mt-16 flex w-full flex-col justify-center gap-4 md:flex-row"
+          className="mt-20 flex w-full flex-col justify-center gap-4 md:flex-row"
         >
           <motion.div
             className="h-12 w-full rounded-full bg-gradient-to-r from-300 via-400 to-300 bg-[length:400%_100%] md:w-40"
