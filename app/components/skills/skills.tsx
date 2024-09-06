@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
 import { cn } from "@/app/utils/cn";
-import AnimatedNumber from "./animated-numbers";
 import { useRef, useState } from "react";
 
 const neue = Bebas_Neue({
@@ -79,10 +78,7 @@ const SkillItem = ({ name, icon, description, kpi }: SkillType) => {
       <Image src={icon} alt="icon" width={50} height={50} className="mb-2" />
       <h3 className="mb-1 font-semibold">{name}</h3>
       <p className="font-bold text-primary" ref={ref}>
-        <AnimatedNumber
-          springOptions={{ stiffness: 300, bounce: 0.5, duration: kpi }}
-          value={kpi}
-        />
+        {kpi}
       </p>
       <p className="text-balance text-center text-sm text-600">{description}</p>
     </motion.div>

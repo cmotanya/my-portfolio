@@ -1,18 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
 import React from "react";
+import { motion } from "framer-motion";
 import { Bebas_Neue } from "next/font/google";
-import Skills from "./components/about/skills";
 import { Toaster } from "sonner";
-import WorkExperience from "./components/workExperience";
 import { InView } from "./components/in-view";
 import { cn } from "./utils/cn";
+
+const Skills = React.lazy(() => import("./components/skills/skills"));
+const WorkExperience = React.lazy(() => import("./components/workExperience"));
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
   weight: ["400"],
 });
+
 const About = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -26,20 +28,8 @@ const About = () => {
     },
   };
 
-  const textVariants = {
+  const childVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.43, 0.13, 0.23, 0.96],
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
       x: 0,
@@ -73,7 +63,7 @@ const About = () => {
           variants={containerVariants}
           className="space-y-4"
         >
-          <motion.div variants={textVariants} className="space-y-4">
+          <motion.div variants={childVariants} className="space-y-4">
             <h1 className={cn("text-6xl font-bold uppercase", neue.className)}>
               About Me
             </h1>
@@ -93,9 +83,15 @@ const About = () => {
           </motion.div>
 
           <motion.button
-            variants={buttonVariants}
+            aria-label="Hire Me Button"
+            variants={childVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="w-full rounded bg-secondary px-8 py-3 font-semibold uppercase text-black md:w-fit"
           >
             Hire Me
@@ -108,7 +104,11 @@ const About = () => {
         {/* WORK */}
         <WorkExperience />
 
-        <Toaster position="top-center" richColors duration={3000} />
+        <Toaster
+          position="top-center"
+          richColors
+          toastOptions={{ duration: 5000 }}
+        />
       </InView>
     </section>
   );

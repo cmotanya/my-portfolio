@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { InView } from "./components/in-view";
-import DownloadResume from "./components/about/downloadResume";
+import DownloadResume from "./components/intro/downloadResume";
 const Intro = () => {
   const containerVariants = {
     hidden: { opacity: 0 },

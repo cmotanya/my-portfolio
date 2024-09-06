@@ -33,8 +33,8 @@ const Header = () => {
   return (
     <header className="duration-400 flex h-[5.5rem] w-full items-center justify-between border-300 px-5 uppercase transition-colors md:border-b">
       <motion.div
-        initial={{ opacity: 0, scale: 0.6, y: -20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         whileTap={{ scale: 0.95 }}
       >

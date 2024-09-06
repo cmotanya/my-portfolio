@@ -1,7 +1,11 @@
-import ContactForm from "./components/contact/contact-form";
+import React from "react";
 import { Bebas_Neue } from "next/font/google";
 import { cn } from "./utils/cn";
 import { InView } from "./components/in-view";
+
+const ContactForm = React.lazy(
+  () => import("./components/contact/contact-form"),
+);
 
 const neue = Bebas_Neue({
   subsets: ["latin"],

@@ -1,9 +1,12 @@
 import React from "react";
-import Testimonials from "./components/testimonials";
 import { Bebas_Neue } from "next/font/google";
-import ProjectShowcase from "./components/about/project-showcase";
 import { InView } from "./components/in-view";
 import { cn } from "./utils/cn";
+
+const Testimonials = React.lazy(() => import("./components/project/testimonials"));
+const ProjectShowcase = React.lazy(
+  () => import("./components/project/project-showcase"),
+);
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
@@ -31,7 +34,9 @@ const Projects = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         viewOptions={{ margin: "0px 0px -100px 0px" }}
       >
-        <h1 className={cn("text-6xl uppercase mb-4", neue.className)}>Projects</h1>
+        <h1 className={cn("mb-4 text-6xl uppercase", neue.className)}>
+          Projects
+        </h1>
 
         <ProjectShowcase />
 
