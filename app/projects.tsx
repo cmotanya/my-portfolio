@@ -2,8 +2,11 @@ import React from "react";
 import { Bebas_Neue } from "next/font/google";
 import { InView } from "./components/in-view";
 import { cn } from "./utils/cn";
+import PricingSection from "./components/project/pricing";
 
-const Testimonials = React.lazy(() => import("./components/project/testimonials"));
+const Testimonials = React.lazy(
+  () => import("./components/project/testimonials"),
+);
 const ProjectShowcase = React.lazy(
   () => import("./components/project/project-showcase"),
 );
@@ -37,6 +40,8 @@ const Projects = () => {
         <h1 className={cn("mb-4 text-6xl uppercase", neue.className)}>
           Projects
         </h1>
+
+        <PricingSection />
 
         <ProjectShowcase />
 
