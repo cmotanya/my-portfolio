@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { cn } from "./utils/cn";
 import DesktopHeader from "./header/desktop";
 import MobileHeader from "./header/mobile";
-import { Lilita_One } from "next/font/google";
 import { motion } from "framer-motion";
-
-const greyQo = Lilita_One({ subsets: ["latin"], weight: "400" });
+import { IconDeviceMobile } from "@tabler/icons-react";
 
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,8 +40,27 @@ const Header = () => {
           href="tel:+254712909475"
           rel="noopener"
           target="_blank"
-          className="rounded bg-secondary p-2 font-medium"
+          className="flex gap-2 rounded bg-secondary p-2 font-medium"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
+          <motion.span
+            className="relative"
+            animate={
+              isHovered
+                ? { rotate: [0, 0, 0, 0] }
+                : { rotate: [0, 15, -15, 10] }
+            }
+            transition={{
+              repeat: isHovered ? 0 : Infinity,
+              repeatType: "loop",
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            whileHover={{ animationPlayState: "paused" }}
+          >
+            <IconDeviceMobile />
+          </motion.span>
           0712909475
         </Link>
       </motion.div>
