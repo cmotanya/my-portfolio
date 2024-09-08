@@ -66,7 +66,7 @@ const SkillItem = ({ name, icon, description, kpi }: SkillType) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       />
-      <Image src={icon} alt="icon" width={50} height={50} className="mb-2" />
+      <Image src={icon} alt="icon" width={80} height={80} className="mb-2" />
       <h3 className="mb-1 font-semibold">{name}</h3>
       <p className="font-bold text-primary">{kpi}</p>
       <p className="text-balance text-center text-sm text-600">{description}</p>

@@ -58,18 +58,20 @@ const WorkExperience = () => {
                   "2px 2px 5px rgba(0, 0, 0, 0.1), -2px 2px 5px rgba(0, 0, 0, 0.1), 2px -2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <div className="relative flex justify-between">
+              <div className="flex justify-between">
                 <span className="font-semibold uppercase text-600">
                   {item.company}
                 </span>
-                <span className="inline-block w-fit rounded bg-secondary p-1 text-sm font-bold text-800">
+                <span className="inline-block rounded bg-secondary p-1 text-sm font-bold text-800">
                   {item.year}
                 </span>
               </div>
 
               <div className="flex flex-col space-y-2 text-base font-semibold">
-                <span className="">{item.title}</span>
-                <span className="text-balance font-normal">{item.role}</span>
+                <span className="text-pretty">{item.title}</span>
+                <span className="text-balance font-normal">
+                  {item.description}
+                </span>
                 <span className="flex items-center gap-2 text-sm text-700">
                   <IconPin />
                   {item.location}
