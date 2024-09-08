@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="flex items-center justify-center gap-4 md:justify-end">
             {Socials.map((social, index) => (
               <a
-                href={social.href}
+                href={"#"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.ariaLabel}
