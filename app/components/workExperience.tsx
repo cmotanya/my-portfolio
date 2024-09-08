@@ -30,7 +30,7 @@ const WorkExperience = () => {
           <div
             key={index}
             className={cn(
-              "mb-6 ms-6 flex flex-col md:ms-0",
+              "mb-6 ms-8 flex flex-col md:ms-0",
               index % 2 === 0
                 ? "md:me-8 md:items-start"
                 : "md:ms-8 md:items-end",
@@ -57,18 +57,18 @@ const WorkExperience = () => {
               }}
             >
               <div className="relative flex justify-between">
-                <span className="font-medium uppercase text-600">
+                <span className="font-semibold uppercase text-600">
                   {item.company}
                 </span>
-                <span className="rounded-md bg-primary p-1 text-sm text-white">
+                <span className="inline-block w-fit rounded bg-secondary p-1 text-sm font-bold text-800">
                   {item.year}
                 </span>
               </div>
 
               <div className="flex flex-col space-y-2 text-base font-semibold">
                 <span className="">{item.title}</span>
-                <span className="font-normal">{item.role}</span>
-                <span className="flex items-center gap-2 text-sm font-bold text-500">
+                <span className="text-balance font-normal">{item.role}</span>
+                <span className="flex items-center gap-2 text-sm font-semibold text-500">
                   <IconPin />
                   {item.location}
                 </span>
