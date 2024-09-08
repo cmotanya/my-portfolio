@@ -5,6 +5,8 @@ import { Bebas_Neue } from "next/font/google";
 import {
   IconHandFingerLeft,
   IconHandFingerRight,
+  IconLocationCheck,
+  IconMap,
   IconPin,
 } from "@tabler/icons-react";
 
@@ -68,7 +70,7 @@ const WorkExperience = () => {
               <div className="flex flex-col space-y-2 text-base font-semibold">
                 <span className="">{item.title}</span>
                 <span className="text-balance font-normal">{item.role}</span>
-                <span className="flex items-center gap-2 text-sm font-semibold text-500">
+                <span className="flex items-center gap-2 text-sm text-700">
                   <IconPin />
                   {item.location}
                 </span>
