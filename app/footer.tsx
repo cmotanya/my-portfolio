@@ -73,7 +73,7 @@ const Footer = () => {
           Reserved.
         </p>
         <p className="text-xs text-500">
-          Designed in Figma and fully built with Next.js
+          Loosely designed in Figma and fully built with Next.js
         </p>
       </div>
     </footer>
