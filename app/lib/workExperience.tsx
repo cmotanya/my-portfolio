@@ -2,6 +2,10 @@ import {
   IconBriefcase,
   IconSchool,
   IconDeviceLaptop,
+  IconTie,
+  IconTools,
+  IconUser,
+  IconCircleDotted,
 } from "@tabler/icons-react";
 
 export const workExperience = [
@@ -10,7 +14,7 @@ export const workExperience = [
     title: "Freelance CCTV and Network Technician",
     company: "Self-Employed",
     location: "Mombasa and throughout Kenya",
-    icon: <IconDeviceLaptop size={24} />,
+    icon: <IconCircleDotted size={24} />,
     description:
       "Installing CCTV systems, setting up networks, and repairing computers for various clients across Kenya.",
   },
@@ -21,12 +25,12 @@ export const workExperience = [
     location: "Mombasa, Kenya",
     icon: <IconBriefcase size={24} />,
     description:
-      "Exceeded sales targets, improved inventory management, and provided excellent customer service in computer retail.",
+      "Assisted customers with computer purchases, managed inventory, and conducted product demonstrations in a retail environment.",
   },
   {
     year: "2016 - 2017",
     title: "Computer Studies Teacher",
-    company: "St. Thomas Moore School",
+    company: "St. Thomas Moore Secondary School",
     location: "Nyamira, Kenya",
     icon: <IconSchool size={24} />,
     description:

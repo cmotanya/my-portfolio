@@ -9,6 +9,7 @@ import {
   IconMap,
   IconPin,
 } from "@tabler/icons-react";
+import { motion } from "framer-motion";
 
 const neue = Bebas_Neue({
   subsets: ["latin"],
@@ -27,9 +28,12 @@ const WorkExperience = () => {
         work experience
       </h3>
 
-      <div className="md:p-2">
+      <div className="md:p-4">
         {workExperience.map((item, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 * index, duration: 0.5 }}
             key={index}
             className={cn(
               "mb-6 ms-8 flex flex-col md:ms-0",
@@ -39,7 +43,9 @@ const WorkExperience = () => {
             )}
           >
             <div
-              className={cn("absolute left-0 md:left-1/2 md:-translate-x-1/2")}
+              className={cn(
+                "absolute left-0 z-10 md:left-1/2 md:-translate-x-1/2",
+              )}
             >
               {index % 2 === 0 ? (
                 <span>
@@ -51,17 +57,22 @@ const WorkExperience = () => {
               )}
             </div>
 
-            <div
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
               className="flex w-full flex-col gap-4 rounded-md bg-100 p-3 shadow-xl md:w-1/2"
               style={{
                 boxShadow:
                   "2px 2px 5px rgba(0, 0, 0, 0.1), -2px 2px 5px rgba(0, 0, 0, 0.1), 2px -2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <div className="flex justify-between">
-                <span className="font-semibold uppercase text-600">
-                  {item.company}
-                </span>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2">
+                  <span>{item.icon}</span>
+                  <span className="font-semibold uppercase text-600">
+                    {item.company}
+                  </span>
+                </div>
                 <span className="inline-block rounded bg-secondary p-1 text-sm font-bold text-800">
                   {item.year}
                 </span>
@@ -77,8 +88,8 @@ const WorkExperience = () => {
                   {item.location}
                 </span>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </div>
