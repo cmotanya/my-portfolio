@@ -55,12 +55,13 @@ const Intro = () => {
           variants={containerVariants}
           className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
         >
-          <motion.div variants={itemVariants} className="mb-8">
+          <motion.div
+            variants={itemVariants}
+            className="-mb-[4rem] -mt-[8rem] md:-mb-4 md:-mt-[6rem]"
+          >
             <motion.div
               whileHover={{
-                scale: 1.2,
-
-                boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.3)",
+                scale: 1.05,
               }}
               transition={{
                 duration: 0.6,
@@ -69,14 +70,14 @@ const Intro = () => {
                 stiffness: 200,
                 damping: 12,
               }}
-              className="relative rounded-full shadow-lg ring-4 ring-accent ring-offset-4 ring-offset-white"
+              className="relative mx-auto"
             >
               <Image
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="Cornelius Motanya"
-                width={170}
-                height={170}
-                className="rounded-full"
+                width={500}
+                height={500}
+                className="size-[30rem] object-cover md:size-[40rem]"
               />
             </motion.div>
           </motion.div>
