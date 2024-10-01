@@ -53,11 +53,11 @@ const Intro = () => {
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="container mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
+          className="container -z-40 mx-auto flex h-full flex-col items-center justify-center px-4 py-4 md:py-8"
         >
           <motion.div
             variants={itemVariants}
-            className="-mb-[4rem] -mt-[8rem] md:-mb-4 md:-mt-[6rem]"
+            className="-mt-[6rem] md:-mb-4 md:-mt-[6rem]"
           >
             <motion.div
               whileHover={{
@@ -77,7 +77,7 @@ const Intro = () => {
                 alt="Cornelius Motanya"
                 width={500}
                 height={500}
-                className="size-[30rem] object-cover md:size-[40rem]"
+                className="size-[25rem] object-cover md:size-[40rem]"
               />
             </motion.div>
           </motion.div>
